@@ -54,6 +54,9 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
 
+
+                                      <a href="{{ route('profile') }}">Profile</a>
+
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -61,16 +64,6 @@
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-
-                                        <a href="{{ route('password.request') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('reset_form').submit();">
-                                           Forgot Password
-                                        </a>
-
-                                        <form id="reset_form" action="{{ route('password.request') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>

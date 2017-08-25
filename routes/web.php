@@ -13,10 +13,19 @@
 
 use App\Task;
 
+
+
+
+
 Route::group( ['middleware' => 'auth' ], function(){
   Route::get('/home', 'HomeController@home');
   ROute::get('/', 'HomeController@welcome');
 });
+
+
+
+
+
 
 
 Route::get('/tasks', function () {

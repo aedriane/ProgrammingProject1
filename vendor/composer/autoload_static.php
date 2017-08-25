@@ -63,6 +63,7 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         ),
         'M' => 
         array (
+            'MrEssex\\LaravelAuthProfile\\' => 27,
             'Monolog\\' => 8,
         ),
         'L' => 
@@ -186,6 +187,10 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'MrEssex\\LaravelAuthProfile\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mressex/laravel-auth-profile/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -286,6 +291,7 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Notifications\\ResetPasswordNotification' => __DIR__ . '/../..' . '/app/Notifications/ResetPasswordNotification.php',
+        'App\\Notifications\\UserRegisteredNotification' => __DIR__ . '/../..' . '/app/Notifications/UserRegisteredNotification.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1725,6 +1731,8 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+        'MrEssex\\LaravelAuthProfile\\AuthProfileController' => __DIR__ . '/..' . '/mressex/laravel-auth-profile/src/AuthProfileController.php',
+        'MrEssex\\LaravelAuthProfile\\AuthProfileServiceProvider' => __DIR__ . '/..' . '/mressex/laravel-auth-profile/src/AuthProfileServiceProvider.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',

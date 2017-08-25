@@ -23,8 +23,8 @@ class UserRegisteredNotification extends Notification
       return (new MailMessage)
           ->success()
           ->subject('Welcome to JobHorizon!')
-          ->line('Dear ' . $this->user->name . ', we have sent you an email confirming your registration.')
+          ->line('Dear ' . $this->user->username . ', we have sent you an email confirming your registration.')
           ->action('Confirm', url('/'), $this->user)
-          ->line('Please click on confirm to successfully confirm your account and start accessing JobHorizon! :^)');
+          ->line('Please click on confirm to successfully confirm your account and start accessing JobHorizon!');
   }
 }
