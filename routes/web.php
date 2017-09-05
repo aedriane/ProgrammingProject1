@@ -13,14 +13,35 @@
 
 use App\Task;
 
+Route::get('faq', array('as' => 'faq', function(){
+  return view('faq');
+}));
 
+Auth::routes();
 
+Route::group(['middleware' => 'guest'], function(){
+
+  Route::get('/', function(){
+    return view ('auth.login');
+  });
+
+  Route::get('register', 'GuestController@index')->name('register');
+});
 
 
 Route::group( ['middleware' => 'auth' ], function(){
-  Route::get('/home', 'HomeController@home');
-  ROute::get('/', 'HomeController@welcome');
+
+    Route::get('authentication', 'HomeController@register');
+
+    Route::get('/', 'HomeController@recommendations')->name('welcome');
+
 });
+
+
+
+
+
+
 
 
 
@@ -57,9 +78,3 @@ Route::get('/tasks/{task}', function ($id) {
 Route::get('about', function(){
   return view('about');
 });
-
-Route::get('auth/passwords/reset')->name('reset');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@home')->name('home');

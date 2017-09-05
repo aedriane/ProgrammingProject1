@@ -10,6 +10,13 @@
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
+                        <center><div class="form-group">
+
+                         <div class="col-md-6">
+                           <h3>User Details</h3>
+                         </div>
+                     </div></center>
+
                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                             <label for="username" class="col-md-4 control-label">Username</label>
 
@@ -23,7 +30,6 @@
                             @endif
                         </div>
                     </div>
-
 
 
                         <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
@@ -89,6 +95,55 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
+
+                        <center><div class="form-group">
+
+                         <div class="col-md-6">
+                           <h3>Preferences</h3>
+                         </div>
+                     </div></center>
+
+                        <div class="form-group">
+                         <label for="location" class="col-md-4 control-label">Location</label>
+
+                         <div class="col-md-6">
+                           <select id="location" name="location" class="form-control" placeholder="Select Location">
+                                  <option value='NULL'>Select Location</option>
+                                   @foreach($locations as $loc)
+                                   <option value="{{$loc->location}}">{{$loc->location}}</option>
+                                   @endforeach
+                           </select>
+                         </div>
+                     </div>
+
+                        <div class="form-group">
+                          <label for="classification" class="col-md-4 control-label">Classification</label>
+
+                          <div class="col-md-6">
+                            <select id="classification" name="classification" class="form-control">
+                                   <option value='NULL'>Select Classification</option>
+                                    @foreach($classifications as $cla)
+                                    <option value="{{$cla->classification}}">{{$cla->classification}}</option>
+                                    @endforeach
+                            </select>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="workType" class="col-md-4 control-label">Work Type</label>
+
+                        <div class="col-md-6">
+                          <select id="workType" name="workType" class="form-control">
+                                 <option value='NULL'>Select Classification</option>
+                                  @foreach($workTypes as $work)
+                                  <option value="{{$work->workType}}">{{$work->workType}}</option>
+                                  @endforeach
+                          </select>
+                        </div>
+                    </div>
+
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

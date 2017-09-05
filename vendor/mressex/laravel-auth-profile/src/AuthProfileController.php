@@ -5,6 +5,7 @@ namespace MrEssex\LaravelAuthProfile;
 use App\User;
 use App\Http\Controllers\Controller;
 use Session;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 
@@ -33,7 +34,10 @@ class AuthProfileController extends Controller
     {
         // Get the current authenticated user object
         $user = User::find($request->user()->id);
-        return view('laravelauthprofile::viewprofile', ['user' => $user]) ;
+        $locations=DB::table('jobs')->distinct()->select('location')->get();
+        $classifications=DB::table('jobs')->distinct()->select('classification')->get();
+
+        return view('laravelauthprofile::viewprofile', ['user' => $user], compact('locations', 'classifications')) ;
     }
 
     /**
@@ -76,6 +80,24 @@ class AuthProfileController extends Controller
                 'password' => 'min:8|required'
             ]);
             $user->password = bcrypt($request["password"]);
+        }
+
+        if($request["location"])
+        {
+          $this->validate($request,
+          [
+            'location' => 'max:255'
+          ]);
+          $user->location = $request["location"];
+        }
+
+        if($request["classification"])
+        {
+          $this->validate($request,
+          [
+            'classification' => 'max:255'
+          ]);
+          $user->classification = $request["classification"];
         }
 
         $user->save();

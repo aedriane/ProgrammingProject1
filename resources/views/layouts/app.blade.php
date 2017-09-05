@@ -12,6 +12,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style type="text/css">
+    h2{
+      display: inline;
+      margin-left: 2.5em;
+      text-decoration: none;
+    }
+
+    </style>
 </head>
 <body>
     <div id="app">
@@ -31,6 +40,8 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
+
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -73,7 +84,13 @@
                     </ul>
                 </div>
             </div>
+            <center><a href="{{ route('welcome') }}"style="text-decoration: none"><h2>Search</h2></a>
+                    <a href="{{ route('profile') }}"style="text-decoration: none"><h2>Profile</h2></a>
+                    <a href="{{ route('faq') }}"style="text-decoration: none"><h2>FAQs</h2></a>
+            </centre>
         </nav>
+
+
 
         @yield('content')
     </div>
