@@ -36,8 +36,9 @@ class AuthProfileController extends Controller
         $user = User::find($request->user()->id);
         $locations=DB::table('jobs')->distinct()->select('location')->get();
         $classifications=DB::table('jobs')->distinct()->select('classification')->get();
+        $workTypes=DB::table('jobs')->distinct()->select('workType')->get();
 
-        return view('laravelauthprofile::viewprofile', ['user' => $user], compact('locations', 'classifications')) ;
+        return view('laravelauthprofile::viewprofile', ['user' => $user], compact('locations', 'classifications', 'workTypes')) ;
     }
 
     /**
@@ -98,6 +99,15 @@ class AuthProfileController extends Controller
             'classification' => 'max:255'
           ]);
           $user->classification = $request["classification"];
+        }
+
+        if($request["workType"])
+        {
+          $this->validate($request,
+          [
+            'workType' => 'max:255'
+          ]);
+          $user->workType = $request["workType"];
         }
 
         $user->save();

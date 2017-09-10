@@ -35,6 +35,10 @@ Route::group( ['middleware' => 'auth' ], function(){
 
     Route::get('/', 'HomeController@recommendations')->name('welcome');
 
+    Route::get('search', 'HomeController@search')->name('search');
+
+    Route::any('searchresults', 'HomeController@searchresults')->name('searchresults');
+
 });
 
 

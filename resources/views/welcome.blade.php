@@ -1,6 +1,8 @@
-  @extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
+
+
 
 
 
@@ -13,6 +15,9 @@
             <tr>
                 <th>Title</th>
                 <th>Location</th>
+                <th>Classification</th>
+                <th>Work Type</th>
+                <th>Posted</th>
             </tr>
         </thead>
         <tbody>
@@ -20,12 +25,14 @@
             <tr>
                 <td>{{$job->title}}</td>
                 <td>{{$job->location}}</td>
+                <td>{{$job->classification}}</td>
+                <td>{{$job->workType}}</td>
+                <td>{{$job->posted}}</td>
             </tr>
             @endforeach
         </tbody>
     </table>
 
-</div>
 </div>
 
 

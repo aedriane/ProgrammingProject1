@@ -20,6 +20,26 @@
       text-decoration: none;
     }
 
+    img.logo{
+      position: relative;
+      top:17px;
+    }
+
+    a.loginregister{
+      position: absolute;
+      top: 30px;
+    }
+
+    a.auth{
+      position: absolute;
+      top:30px;
+    }
+
+    ul.auth{
+      position:absolute;
+      top:80px;
+    }
+
     </style>
 </head>
 <body>
@@ -37,9 +57,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
+                    <a href="{{URL::to('/')}}"><img class="logo" src={{asset('img/JobHLogo.png')}} alt="Logo" style="width:257px;height:86px;"></a>
 
 
                 </div>
@@ -54,15 +72,15 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a class="loginregister" href="{{ route('login') }}">Login</a></li>
+                            <li><a class="loginregister" href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a class="auth" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->email }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu auth" role="menu">
                                     <li>
 
 
@@ -84,7 +102,7 @@
                     </ul>
                 </div>
             </div>
-            <center><a href="{{ route('welcome') }}"style="text-decoration: none"><h2>Search</h2></a>
+            <center><a href="{{ route('search') }}"style="text-decoration: none"><h2>Search</h2></a>
                     <a href="{{ route('profile') }}"style="text-decoration: none"><h2>Profile</h2></a>
                     <a href="{{ route('faq') }}"style="text-decoration: none"><h2>FAQs</h2></a>
             </centre>

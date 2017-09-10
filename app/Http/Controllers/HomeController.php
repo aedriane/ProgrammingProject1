@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Input;
 use Auth;
 use MrEssex\LaravelAuthProfile\routes;
+use Carbon;
 
 class HomeController extends Controller
 {
@@ -40,14 +42,6 @@ class HomeController extends Controller
       return view('faq');
     }
 
-    public function index()
-    {
-      $locations=DB::table('jobs')->distinct()->select('location')->get();
-      $classifications=DB::table('jobs')->distinct()->select('classification')->get();
-
-      return view('profile', compact('locations', 'classifications'));
-    }
-
     public function recommendations()
     {
 
@@ -55,12 +49,46 @@ class HomeController extends Controller
         $jobs=DB::table('jobs')
         ->where('jobs.location', '=', Auth::user()->location)
         ->where('jobs.classification', '=', Auth::user()->classification)
+        ->where('jobs.workType', '=', Auth::user()->workType)
         ->orderByRaw("RAND()")
         ->take(3)
         ->get();
 
 
       return view('welcome', compact('jobs'));
+    }
+
+    public function search()
+    {
+      return view('search');
+    }
+
+
+
+    public function searchresults()
+    {
+
+
+      $search=Input::get('search');
+      $queried=DB::table('jobs')
+      ->where('title', 'LIKE', '%'.$search.'%')
+      ->orWhere('location', 'LIKE', '%'.$search.'%')
+      ->get();
+
+      if(count($queried) > 0)
+      {
+        return view('search')
+        ->withDetails($queried)
+        ->withQuery($search);
+      }
+
+      else
+      {
+        return view('search',
+        [
+          'error' => 'error'
+        ]);
+      }
     }
 
 

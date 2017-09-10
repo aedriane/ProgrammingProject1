@@ -55,7 +55,7 @@
 
                 <center><div class="form-group">
                     <div class="col-lg-8">
-                        <h3>Your preferences</h3>
+                        <h3 align=>Your preferences</h3>
                     </div>
                 </div></center>
 
@@ -84,6 +84,19 @@
                  </select>
                </div>
            </div>
+
+           <div class="form-group">
+             <label for="workType" class="col-md-4 control-label">Work Type</label>
+
+             <div class="col-md-6">
+               <select id="workType" name="workType" class="form-control">
+                      <option value='{{$user->workType}}'>Select Work Type</option>
+                       @foreach($workTypes as $wor)
+                       <option value="{{$wor->workType}}">{{$wor->workType}}</option>
+                       @endforeach
+               </select>
+             </div>
+         </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
