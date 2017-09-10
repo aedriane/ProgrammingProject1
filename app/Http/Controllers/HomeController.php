@@ -73,6 +73,8 @@ class HomeController extends Controller
       $queried=DB::table('jobs')
       ->where('title', 'LIKE', '%'.$search.'%')
       ->orWhere('location', 'LIKE', '%'.$search.'%')
+      ->orWhere('classification', 'LIKE', '%'.$search.'%')
+      ->orwhere('workType', 'LIKE', '%'.$search.'%')
       ->get();
 
       if(count($queried) > 0)
