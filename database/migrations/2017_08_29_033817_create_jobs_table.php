@@ -20,8 +20,8 @@ class CreateJobsTable extends Migration
             $table->string('location');
             $table->string('classification');
             $table->longtext('description');
+            $table->string('workType');
             $table->date('posted');
-            $table->timestamps();
         });
     }
 
