@@ -1,28 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
-<link href="{{ asset('css/css.css') }}" rel="stylesheet">
-
-<div class="container2">
-=======
 
 @desktop
 
+<link href="{{ asset('css/css.css') }}" rel="stylesheet">
 
-<div class="container">
->>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
+<div class="container2">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="">
                 <div class="panel-heading title"><p>FAQs</p></div>
 
                 <div class="panel-body">
-<<<<<<< HEAD
                     <p>This page is for FAQs regarding regular enquiries and assistance users need.</p>
-=======
-                    <p>This is a dekstop site </p>
->>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
                 </div>
             </div>
         </div>

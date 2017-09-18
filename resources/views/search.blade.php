@@ -3,20 +3,12 @@
 @section('content')
 <link href="{{ asset('css/css.css') }}" rel="stylesheet">
 
-<<<<<<< HEAD
 <div class="container2">
 
     <div class="searchtitle">
       <h2>Search</h2>
       <p>Here are some recommendations that derive from your preferences...</p>
     </div>
-=======
-@desktop
-
-<div class="container">
-
-    <center><h3>Search</h3><center></br>
->>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
     <form action="searchresults" method="POST" role="search">
         {{ csrf_field() }}
         <div class="input-group">
@@ -29,15 +21,14 @@
 
     <div class="searchresault">
         @if(isset($details))
-<<<<<<< HEAD
+
             <p>The Search results for your query <b> {{ $query }} </b> are :</p>
-=======
+
             @if(count($details) == 1)
               <p>The Search yielded <b>{{count($details)}}</b> result for your query of <b>{{ $query }}:</b></p>
             @elseif(count($details) > 1)
               <p>The Search yielded <b>{{count($details)}}</b> results for your query <b>{{ $query }}:</b></p>
-            @endif
->>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
+
         <table class="table table-striped">
           <thead>
               <tr>

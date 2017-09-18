@@ -29,12 +29,6 @@
 
     img.logo{
       position: relative;
-<<<<<<< HEAD
-=======
-      top:17px;
-      max-width: 100%;
-      height: auto;
->>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
     }
 
     a.loginregister{
@@ -53,7 +47,6 @@
       position:absolute;
       top:80px;
     }
-<<<<<<< HEAD
     .navigation{
       height:75px;
       background-color: #78bcff;
@@ -81,12 +74,6 @@
       background-attachment: fixed;
       background-size: 100%;
     }
-=======
-
-
-
-
->>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
     </style>
 </head>
 <body>
@@ -123,11 +110,7 @@
                             <li><a style="color:#fff" class="loginregister" href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-<<<<<<< HEAD
                                 <a style="color:#ffffff" class="auth loginregister" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-=======
-                                <a class="email" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
->>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
                                     {{ Auth::user()->email }} <span class="caret"></span>
                                 </a>
 
@@ -150,10 +133,11 @@
                     </ul>
                 </div>
             </div>
-            <center><a href="{{ route('search') }}"><h2>Search</h2></a>
-                    <a href="{{ route('profile') }}"><h2>Profile</h2></a>
-                    <a href="{{ route('faq') }}"><h2>FAQs</h2></a>
-            </centre>
+            <center class="spf">
+              <a href="{{ route('search') }}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Search</p></a>
+              <a href="{{ route('profile') }}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Profile</p></a>
+              <a href="{{ route('faq') }}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
+            </center>
         </nav>
 
 
@@ -279,21 +263,11 @@
                     </ul>
                 </div>
             </div>
-<<<<<<< HEAD
             <center class="spf">
               <a href="{{ route('search') }}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Search</p></a>
               <a href="{{ route('profile') }}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Profile</p></a>
               <a href="{{ route('faq') }}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
             </center>
-=======
-
-            <div class="nav-bar">
-            <center><a href="{{ route('search') }}">Search</a>
-                    <a href="{{ route('profile') }}">Profile</a>
-                    <a href="{{ route('faq') }}">FAQs</a>
-            </centre>
-          </div>
->>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
         </nav>
 
 
