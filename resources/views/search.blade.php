@@ -1,31 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('css/css.css') }}" rel="stylesheet">
 
+<<<<<<< HEAD
+<div class="container2">
+
+    <div class="searchtitle">
+      <h2>Search</h2>
+      <p>Here are some recommendations that derive from your preferences...</p>
+    </div>
+=======
 @desktop
 
 <div class="container">
 
     <center><h3>Search</h3><center></br>
+>>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
     <form action="searchresults" method="POST" role="search">
         {{ csrf_field() }}
         <div class="input-group">
-            <input type="text" class="form-control" name="search"
-                placeholder="Search jobs"> <span class="input-group-btn">
-                <button type="submit" class="btn btn-default">
-                    <span class="glyphicon glyphicon-search"></span>
-                </button>
-            </span>
+            <input type="text" class="input2" name="search" placeholder="Search jobs">
+            <button type="submit" class="btn btn-primary button2">
+                Search
+            </button>
         </div>
     </form>
 
-    <div class="container">
+    <div class="searchresault">
         @if(isset($details))
+<<<<<<< HEAD
+            <p>The Search results for your query <b> {{ $query }} </b> are :</p>
+=======
             @if(count($details) == 1)
               <p>The Search yielded <b>{{count($details)}}</b> result for your query of <b>{{ $query }}:</b></p>
             @elseif(count($details) > 1)
               <p>The Search yielded <b>{{count($details)}}</b> results for your query <b>{{ $query }}:</b></p>
             @endif
+>>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
         <table class="table table-striped">
           <thead>
               <tr>
@@ -47,7 +59,7 @@
               </tr>
               @endforeach
           </tbody>
-      </table>
+        </table>
 
       @elseif(isset($error))
       <h4 >Sorry! We couldn't find anything. Maybe try taking the following steps…</h4>

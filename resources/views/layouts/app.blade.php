@@ -17,43 +17,82 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style type="text/css">
-    h2{
-      display: inline;
-      margin-left: 2.5em;
+    p.chosepg{
+      width:100%;
+      font-size: 24px;
+      font-family: Arial;
+      float: left;
       text-decoration: none;
+      color:#888888;
+      line-height: 100%;
     }
 
     img.logo{
       position: relative;
+<<<<<<< HEAD
+=======
       top:17px;
       max-width: 100%;
       height: auto;
+>>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
     }
 
     a.loginregister{
       position: absolute;
-      top: 30px;
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: arial;
     }
 
     a.email{
       position: absolute;
-      top:30px;
+      top:5px;
     }
 
     ul.auth{
       position:absolute;
       top:80px;
     }
+<<<<<<< HEAD
+    .navigation{
+      height:75px;
+      background-color: #78bcff;
+      border-bottom: 2px solid #bcbcbc;
+    }
+    .spf{
+      width: 60%;
+      margin-left: 20%;
+    }
+    .container1{
+      height: 75px;
+      width: 80%;
+      margin-left: 10%;
+    }
+    .pages{
+      width:33%;
+      background-color: #ffffff;
+      float:left;
+      text-align: center;
+      border-right: #eeeeee solid 1px;
+      border-bottom: #eeeeee solid 1px;
+    }
+    body{
+      background:url(img/JobHBG1.png) no-repeat;
+      background-attachment: fixed;
+      background-size: 100%;
+    }
+=======
 
 
 
 
+>>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
     </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+        <nav class="navbar navbar-default navbar-static-top navigation">
+            <div class="container1">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -65,7 +104,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a href="{{URL::to('/')}}"><img class="logo" src={{asset('img/JobHLogo.png')}} alt="Logo" style="width:257px;height:86px;"></a>
+                    <a href="{{URL::to('/')}}"><img class="logo" src={{asset('img/JobHLogo.png')}} alt="Logo" style="width:240px;height:73px;"></a>
 
 
                 </div>
@@ -80,15 +119,19 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a class="loginregister" href="{{ route('login') }}">Login</a></li>
-                            <li><a class="loginregister" href="{{ route('register') }}">Register</a></li>
+                            <li><a style="color:#fff" class="loginregister" href="{{ route('login') }}">Login</a></li>
+                            <li><a style="color:#fff" class="loginregister" href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
+<<<<<<< HEAD
+                                <a style="color:#ffffff" class="auth loginregister" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+=======
                                 <a class="email" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+>>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
                                     {{ Auth::user()->email }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu auth" role="menu">
+                                <ul class="dropdown-menu" role="menu">
                                     <li>
                                       <a href="{{ route('profile') }}">Profile</a>
                                         <a href="{{ route('logout') }}"
@@ -236,6 +279,13 @@
                     </ul>
                 </div>
             </div>
+<<<<<<< HEAD
+            <center class="spf">
+              <a href="{{ route('search') }}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Search</p></a>
+              <a href="{{ route('profile') }}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Profile</p></a>
+              <a href="{{ route('faq') }}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
+            </center>
+=======
 
             <div class="nav-bar">
             <center><a href="{{ route('search') }}">Search</a>
@@ -243,6 +293,7 @@
                     <a href="{{ route('faq') }}">FAQs</a>
             </centre>
           </div>
+>>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
         </nav>
 
 

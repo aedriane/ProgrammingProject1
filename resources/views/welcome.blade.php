@@ -1,11 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('css/css.css') }}" rel="stylesheet">
 
 
 @desktop
 
+<div class="container2">
 
+<<<<<<< HEAD
+    <div class="searchresault">
+      <h2>Recommendations...</h2>
+      <p>Here are some recommendations that derive from your preferences...</p>
+    </div>
+=======
 <div class="container">
 
     <h3>Recommendations!</h3>
@@ -13,6 +21,7 @@
 
     @if(isset($jobs))
 
+>>>>>>> 8365fa764ca53310cbe727cbbfc105fee41eaebc
     <table class="table table-striped">
         <thead>
             <tr>
