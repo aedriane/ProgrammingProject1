@@ -39,6 +39,7 @@ Route::group( ['middleware' => 'auth' ], function(){
 
     Route::any('searchresults', 'HomeController@searchresults')->name('searchresults');
 
+    Route::get('/search/{search}', 'HomeController@detailedjob')->name('detailedjob');
 });
 
 
@@ -77,8 +78,4 @@ Route::get('/tasks/{task}', function ($id) {
     return view('tasks.show', compact('tasks'));
 
 
-});
-
-Route::get('about', function(){
-  return view('about');
 });
