@@ -29,9 +29,6 @@
 
     img.logo{
       position: relative;
-      top:17px;
-      max-width: 100%;
-      height: auto;
     }
 
     a.loginregister{
@@ -50,7 +47,6 @@
       position:absolute;
       top:80px;
     }
-
     .navigation{
       height:75px;
       background-color: #78bcff;
@@ -78,7 +74,6 @@
       background-attachment: fixed;
       background-size: 100%;
     }
-
     </style>
 </head>
 <body>
@@ -115,10 +110,7 @@
                             <li><a style="color:#fff" class="loginregister" href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-
                                 <a style="color:#ffffff" class="auth loginregister" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-
-                                <a class="email" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->email }} <span class="caret"></span>
                                 </a>
 
@@ -271,19 +263,11 @@
                     </ul>
                 </div>
             </div>
-
             <center class="spf">
               <a href="{{ route('search') }}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Search</p></a>
               <a href="{{ route('profile') }}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Profile</p></a>
               <a href="{{ route('faq') }}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
             </center>
-
-            <div class="nav-bar">
-            <center><a href="{{ route('search') }}">Search</a>
-                    <a href="{{ route('profile') }}">Profile</a>
-                    <a href="{{ route('faq') }}">FAQs</a>
-            </centre>
-          </div>
         </nav>
 
 

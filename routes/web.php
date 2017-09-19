@@ -40,6 +40,49 @@ Route::group( ['middleware' => 'auth' ], function(){
     Route::any('searchresults', 'HomeController@searchresults')->name('searchresults');
 
     Route::get('/search/{search}', 'HomeController@detailedjob')->name('detailedjob');
+<<<<<<< HEAD
+=======
+});
+
+Route::prefix('admin')->group(function() {
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/', 'AdminController@admin')->name('admin.dashboard');
+});
+
+
+
+
+
+
+
+
+
+
+Route::get('/tasks', function () {
+
+    //$tasks = DB::table('tasks')->latest()->get();
+
+    //return $tasks;
+
+    $tasks = Task::all();
+
+    return view('tasks.index', compact('tasks'));
+
+
+});
+
+Route::get('/tasks/{task}', function ($id) {
+
+    //$tasks = DB::table('tasks')->find($id);
+
+    $tasks = Task::find($id);
+
+    //return $tasks;
+
+    return view('tasks.show', compact('tasks'));
+
+>>>>>>> 88536228ccc941b54ed8458c850300b4844a719e
 
     Route::get('applyconfirmation', 'ApplyController@apply')->name('applyconfirmation');
 });
