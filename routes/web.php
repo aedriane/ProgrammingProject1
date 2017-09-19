@@ -42,8 +42,11 @@ Route::group( ['middleware' => 'auth' ], function(){
     Route::get('/search/{search}', 'HomeController@detailedjob')->name('detailedjob');
 });
 
-
-
+Route::prefix('admin')->group(function() {
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/', 'AdminController@admin')->name('admin.dashboard');
+});
 
 
 
