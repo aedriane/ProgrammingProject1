@@ -68,7 +68,6 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         ),
         'M' => 
         array (
-            'MrEssex\\LaravelAuthProfile\\' => 27,
             'Monolog\\' => 8,
         ),
         'L' => 
@@ -205,10 +204,6 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'MrEssex\\LaravelAuthProfile\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/mressex/laravel-auth-profile/src',
-        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -305,6 +300,8 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\ApplyConfirmationNotification' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplyConfirmationNotification.php',
+        'App\\Http\\Controllers\\ApplyController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplyController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -324,7 +321,6 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\Task' => __DIR__ . '/../..' . '/app/Task.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
@@ -1767,8 +1763,6 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
-        'MrEssex\\LaravelAuthProfile\\AuthProfileController' => __DIR__ . '/..' . '/mressex/laravel-auth-profile/src/AuthProfileController.php',
-        'MrEssex\\LaravelAuthProfile\\AuthProfileServiceProvider' => __DIR__ . '/..' . '/mressex/laravel-auth-profile/src/AuthProfileServiceProvider.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',

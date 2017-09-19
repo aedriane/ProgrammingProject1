@@ -40,42 +40,6 @@ Route::group( ['middleware' => 'auth' ], function(){
     Route::any('searchresults', 'HomeController@searchresults')->name('searchresults');
 
     Route::get('/search/{search}', 'HomeController@detailedjob')->name('detailedjob');
-});
 
-
-
-
-
-
-
-
-
-
-
-
-
-Route::get('/tasks', function () {
-
-    //$tasks = DB::table('tasks')->latest()->get();
-
-    //return $tasks;
-
-    $tasks = Task::all();
-
-    return view('tasks.index', compact('tasks'));
-
-
-});
-
-Route::get('/tasks/{task}', function ($id) {
-
-    //$tasks = DB::table('tasks')->find($id);
-
-    $tasks = Task::find($id);
-
-    //return $tasks;
-
-    return view('tasks.show', compact('tasks'));
-
-
+    Route::get('applyconfirmation', 'ApplyController@apply')->name('applyconfirmation');
 });

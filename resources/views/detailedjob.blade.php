@@ -5,7 +5,8 @@
 <div class="container">
     <table class="table table-striped">
 
-      <form class="form-horizontal" method="POST" action="#">
+      <a href="{{'/applyconfirmation'}}" >
+          {{ csrf_field() }}
         <thead>
             <tr>
                 <th>Title</th>
@@ -37,6 +38,8 @@
             </button>
         </div>
     </div>
+
+  </a>
 
 </div>
 
