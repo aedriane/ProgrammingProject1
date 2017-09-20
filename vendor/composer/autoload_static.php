@@ -54,6 +54,7 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Sarav\\Multiauth\\' => 16,
         ),
         'R' => 
         array (
@@ -68,6 +69,7 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         ),
         'M' => 
         array (
+            'MrEssex\\LaravelAuthProfile\\' => 27,
             'Monolog\\' => 8,
         ),
         'L' => 
@@ -78,6 +80,11 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'I' => 
         array (
             'Illuminate\\' => 11,
+        ),
+        'H' => 
+        array (
+            'Hesto\\MultiAuth\\' => 16,
+            'Hesto\\Core\\' => 11,
         ),
         'F' => 
         array (
@@ -184,6 +191,10 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Sarav\\Multiauth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sarav/laravel-multiauth/src',
+        ),
         'Riverskies\\Laravel\\MobileDetect\\' => 
         array (
             0 => __DIR__ . '/..' . '/riverskies/laravel-mobile-detect/src',
@@ -204,6 +215,10 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'MrEssex\\LaravelAuthProfile\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mressex/laravel-auth-profile/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -219,6 +234,14 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
+        ),
+        'Hesto\\MultiAuth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hesto/multi-auth/src',
+        ),
+        'Hesto\\Core\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hesto/core/src',
         ),
         'Faker\\' => 
         array (
@@ -298,10 +321,13 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
     );
 
     public static $classMap = array (
+        'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\ApplyConfirmationNotification' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplyConfirmationNotification.php',
         'App\\Http\\Controllers\\ApplyController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplyController.php',
+        'App\\Http\\Controllers\\Auth\\AdminLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AdminLoginController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -310,6 +336,7 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'App\\Http\\Controllers\\GuestController' => __DIR__ . '/../..' . '/app/Http/Controllers/GuestController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AuthenticateAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/AuthenticateAdmin.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
@@ -849,6 +876,25 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'Hesto\\Core\\Commands\\AppendContentCommand' => __DIR__ . '/..' . '/hesto/core/src/Commands/AppendContentCommand.php',
+        'Hesto\\Core\\Commands\\InstallAndReplaceCommand' => __DIR__ . '/..' . '/hesto/core/src/Commands/InstallAndReplaceCommand.php',
+        'Hesto\\Core\\Commands\\InstallCommand' => __DIR__ . '/..' . '/hesto/core/src/Commands/InstallCommand.php',
+        'Hesto\\Core\\Commands\\InstallContentCommand' => __DIR__ . '/..' . '/hesto/core/src/Commands/InstallContentCommand.php',
+        'Hesto\\Core\\Commands\\InstallFilesCommand' => __DIR__ . '/..' . '/hesto/core/src/Commands/InstallFilesCommand.php',
+        'Hesto\\Core\\Commands\\SimpleReplaceContentCommand' => __DIR__ . '/..' . '/hesto/core/src/Commands/SimpleReplaceContentCommand.php',
+        'Hesto\\Core\\Commands\\TemplateGeneratorCommand' => __DIR__ . '/..' . '/hesto/core/src/Commands/TemplateGeneratorCommand.php',
+        'Hesto\\Core\\Parsers\\NameParser' => __DIR__ . '/..' . '/hesto/core/src/Parsers/NameParser.php',
+        'Hesto\\Core\\Traits\\CanReplaceKeywords' => __DIR__ . '/..' . '/hesto/core/src/Traits/CanReplaceKeywords.php',
+        'Hesto\\MultiAuth\\Commands\\AuthFilesInstallCommand' => __DIR__ . '/..' . '/hesto/multi-auth/src/Commands/AuthFilesInstallCommand.php',
+        'Hesto\\MultiAuth\\Commands\\AuthModelInstallCommand' => __DIR__ . '/..' . '/hesto/multi-auth/src/Commands/AuthModelInstallCommand.php',
+        'Hesto\\MultiAuth\\Commands\\AuthSettingsInstallCommand' => __DIR__ . '/..' . '/hesto/multi-auth/src/Commands/AuthSettingsInstallCommand.php',
+        'Hesto\\MultiAuth\\Commands\\AuthViewsInstallCommand' => __DIR__ . '/..' . '/hesto/multi-auth/src/Commands/AuthViewsInstallCommand.php',
+        'Hesto\\MultiAuth\\Commands\\MultiAuthInstallCommand' => __DIR__ . '/..' . '/hesto/multi-auth/src/Commands/MultiAuthInstallCommand.php',
+        'Hesto\\MultiAuth\\Commands\\Traits\\OverridesCanReplaceKeywords' => __DIR__ . '/..' . '/hesto/multi-auth/src/Commands/Traits/OverridesCanReplaceKeywords.php',
+        'Hesto\\MultiAuth\\Commands\\Traits\\OverridesGetArguments' => __DIR__ . '/..' . '/hesto/multi-auth/src/Commands/Traits/OverridesGetArguments.php',
+        'Hesto\\MultiAuth\\Commands\\Traits\\ParsesServiceInput' => __DIR__ . '/..' . '/hesto/multi-auth/src/Commands/Traits/ParsesServiceInput.php',
+        'Hesto\\MultiAuth\\MultiAuthServiceProvider' => __DIR__ . '/..' . '/hesto/multi-auth/src/MultiAuthServiceProvider.php',
+        'Hesto\\MultiAuth\\Traits\\LogsoutGuard' => __DIR__ . '/..' . '/hesto/multi-auth/src/Traits/LogsoutGuard.php',
         'Illuminate\\Auth\\Access\\AuthorizationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/AuthorizationException.php',
         'Illuminate\\Auth\\Access\\Gate' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Gate.php',
         'Illuminate\\Auth\\Access\\HandlesAuthorization' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/HandlesAuthorization.php',
@@ -1763,6 +1809,8 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+        'MrEssex\\LaravelAuthProfile\\AuthProfileController' => __DIR__ . '/..' . '/mressex/laravel-auth-profile/src/AuthProfileController.php',
+        'MrEssex\\LaravelAuthProfile\\AuthProfileServiceProvider' => __DIR__ . '/..' . '/mressex/laravel-auth-profile/src/AuthProfileServiceProvider.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
@@ -2628,6 +2676,15 @@ class ComposerStaticInitcaea3a8e44b96c03f6cfb5ad6fbcc489
         'Riverskies\\Laravel\\MobileDetect\\Directives\\iOSBladeDirective' => __DIR__ . '/..' . '/riverskies/laravel-mobile-detect/src/Directives/iOSBladeDirective.php',
         'Riverskies\\Laravel\\MobileDetect\\Facades\\MobileDetect' => __DIR__ . '/..' . '/riverskies/laravel-mobile-detect/src/Facades/MobileDetect.php',
         'Riverskies\\Laravel\\MobileDetect\\MobileDetectServiceProvider' => __DIR__ . '/..' . '/riverskies/laravel-mobile-detect/src/MobileDetectServiceProvider.php',
+        'Sarav\\Multiauth\\AuthManager' => __DIR__ . '/..' . '/sarav/laravel-multiauth/src/AuthManager.php',
+        'Sarav\\Multiauth\\Foundation\\AuthenticatesAndRegistersUsers' => __DIR__ . '/..' . '/sarav/laravel-multiauth/src/Foundation/AuthenticatesAndRegistersUsers.php',
+        'Sarav\\Multiauth\\Foundation\\AuthenticatesUsers' => __DIR__ . '/..' . '/sarav/laravel-multiauth/src/Foundation/AuthenticatesUsers.php',
+        'Sarav\\Multiauth\\Foundation\\RedirectsUsers' => __DIR__ . '/..' . '/sarav/laravel-multiauth/src/Foundation/RedirectsUsers.php',
+        'Sarav\\Multiauth\\Foundation\\RegistersUsers' => __DIR__ . '/..' . '/sarav/laravel-multiauth/src/Foundation/RegistersUsers.php',
+        'Sarav\\Multiauth\\Foundation\\ResetsPasswords' => __DIR__ . '/..' . '/sarav/laravel-multiauth/src/Foundation/ResetsPasswords.php',
+        'Sarav\\Multiauth\\Guard' => __DIR__ . '/..' . '/sarav/laravel-multiauth/src/Guard.php',
+        'Sarav\\Multiauth\\Manager' => __DIR__ . '/..' . '/sarav/laravel-multiauth/src/Manager.php',
+        'Sarav\\Multiauth\\MultiauthServiceProvider' => __DIR__ . '/..' . '/sarav/laravel-multiauth/src/MultiauthServiceProvider.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',

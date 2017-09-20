@@ -9,9 +9,9 @@
                 <div class="">
                     <div class="panel-heading title">ADMIN Login</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="{{ route('admin.login.submit') }}">
-                        {{ csrf_field() }}
-                        <!-- email block -->
+                      <form class="form-horizontal" role="form" method="POST" action="{{ url('admin_login') }}">
+                            {{ csrf_field() }}
+                                                    <!-- email block -->
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label for="email" class="inputbna">E-Mail Address</label>
 

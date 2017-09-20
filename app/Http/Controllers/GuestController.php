@@ -36,4 +36,9 @@ class GuestController extends Controller
 
       return view('auth.register', compact('locations', 'classifications', 'workTypes'));
     }
+
+    public function login()
+    {
+      return view('auth.login');
+    }
 }

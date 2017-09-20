@@ -165,6 +165,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Werneckbh\Profile\Providers\ProfileServiceProvider::class,
         Riverskies\Laravel\MobileDetect\MobileDetectServiceProvider::class,
+        Hesto\MultiAuth\MultiAuthServiceProvider::class,
 
         /*
          * Package Service Providers...

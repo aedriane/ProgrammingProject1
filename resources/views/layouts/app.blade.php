@@ -106,7 +106,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a style="color:#fff" class="loginregister" href="{{ route('login') }}">Login</a></li>
+                            <li><a style="color:#fff" class="loginregister" href="{{ route('admin_login') }}">ADMIN Login</a></li>
+                            <li><a style="color:#fff" class="loginregister" href="{{ route('login') }}">Job Seeker Login</a></li>
                             <li><a style="color:#fff" class="loginregister" href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
