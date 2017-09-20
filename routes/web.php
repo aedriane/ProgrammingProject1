@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('jobs','JobController');
+Route::resource('users','UserController');
 
 Auth::routes();
 
@@ -37,7 +39,7 @@ Route::group( ['middleware' => 'auth' ], function(){
 
 Route::group(['prefix' => 'admin'], function () {
 
-  Route::get('faqa', 'AdminController@faq')->name('adminfaq');
+  Route::get('faq', 'AdminController@faq')->name('adminfaq');
 
   Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('admin_login');
   Route::post('/login', 'AdminAuth\LoginController@login');
@@ -51,3 +53,4 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
 });
+
