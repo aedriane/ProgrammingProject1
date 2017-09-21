@@ -14,7 +14,7 @@
 use App\Task;
 
 Route::get('faq', array('as' => 'faq', function(){
-  return view('faq');
+  return view('faq.faq');
 }));
 
 Auth::routes();
