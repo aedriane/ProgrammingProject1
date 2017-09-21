@@ -56,6 +56,7 @@ class RegisterController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'location' => 'required|string|max:255',
             'classification' => 'required|string|max:255',
+            'workType' => 'required|string|max:255',
         ]);
     }
 
@@ -75,6 +76,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'location' => $data['location'],
             'classification' => $data['classification'],
+            'workType' => $data['workType'],
         ]);
     }
 }

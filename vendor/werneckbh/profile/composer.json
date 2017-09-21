@@ -1,0 +1,25 @@
+{
+    "name": "werneckbh/profile",
+    "description": "Basic Profile Manager for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Werneck",
+            "email": "brunovaulawerneck@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Werneckbh\\Profile\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Werneckbh\\Profile\\Providers\\ProfileServiceProvider"
+            ]
+        }
+    }
+}
