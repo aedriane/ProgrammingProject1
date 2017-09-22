@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Job;
+use App\Jobs;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
+use Session;
 
 use App\Http\Requests\JobRequest;
 
 class JobController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +24,8 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::all();
-        return view('users.index', compact('jobs'));
+        $jobs = Jobs::all();
+        return view('jobs.index', compact('jobs'));
     }
 
     /**
@@ -28,7 +35,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        return view('jobs.create');//
+        return view('jobs.create');
     }
 
     /**
@@ -39,8 +46,8 @@ class JobController extends Controller
      */
     public function store(JobRequest $request)
     {
-        Job::create($request->all());
-        return redirect()->route('jobs.index')->with('message','User has been added successfully');
+        Jobs::create($request->all());
+        return redirect()->route('jobs.index')->with('message','Job has been added successfully');
         //
     }
 
@@ -50,8 +57,16 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Job $jobs)
+    // public function show($id)
+    // {
+    //   $jobs = DB::table('jobs')
+    //   ->where('id', $id)->get();
+    //
+    //     return view('jobs.show', compact('jobs'));
+    // }
+    public function show($id)
     {
+       $jobs = Jobs::findOrFail($id);
         return view('jobs.show', compact('jobs'));
     }
     /**
@@ -60,8 +75,9 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Job $jobs)
+    public function edit($id)
     {
+       $jobs = Jobs::findOrFail($id);
         return view('jobs.edit',compact('jobs'));
     }
 
@@ -72,10 +88,25 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(JobRequest $request, Job $jobs)
+    public function update(JobRequest $request, $id)
     {
-        $jobs->update($request->all());
-        return redirect()->route('jobs.index')->with('message','User has been updated successfully');
+
+        $jobs = Jobs::findOrFail($id);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'company' => 'required',
+            'location' => 'required',
+            'classification' => 'required',
+            'workType' => 'required',
+            'description' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $jobs->fill($input)->save();
+
+        return redirect()->route('jobs.index')->with('message','Job has been updated successfully');
     }
 
     /**
@@ -84,10 +115,13 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $jobs)
+    public function destroy($id)
     {
-        $jobs->delete();
-        return redirect()->route('jobs.index')->with('message','User has been deleted successfully');
+      $jobs = Jobs::findOrFail($id);
+
+      $jobs->delete();
+
+      return redirect()->route('jobs.index')->with('message','Job has been deleted successfully');
 
     }
 }

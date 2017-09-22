@@ -60,27 +60,32 @@ class HomeController extends Controller
 
     public function search()
     {
-      return view('search');
+      $locations=DB::table('jobs')->distinct()->select('location')->get();
+
+      return view('search', compact('locations'));
     }
 
 
 
     public function searchresults()
     {
+      $locations=DB::table('jobs')->distinct()->select('location')->get();
+      $searchKeyword=Input::get('search');
+      $searchLocation=Input::get('location');
 
-      $search=Input::get('search');
       $queried=DB::table('jobs')
-      ->where('title', 'LIKE', '%'.$search.'%')
-      ->orWhere('location', 'LIKE', '%'.$search.'%')
-      ->orWhere('classification', 'LIKE', '%'.$search.'%')
-      ->orwhere('workType', 'LIKE', '%'.$search.'%')
-      ->get();
+      ->where('jobs.title', 'LIKE', '%'.$searchKeyword.'%')
+      ->where('jobs.location', 'LIKE', '%'.$searchLocation.'%')
+      // ->orWhere('classification', 'LIKE', '%'.$search.'%')
+      // ->orwhere('workType', 'LIKE', '%'.$search.'%')
+      ->orderBy('jobs.created_at', 'asc')
+      ->paginate(3);
 
       if(count($queried) > 0)
       {
-        return view('search')
+        return view('search', compact('locations'))
         ->withDetails($queried)
-        ->withQuery($search);
+        ->withQuery($searchKeyword, $searchLocation);
       }
 
       else
@@ -88,7 +93,7 @@ class HomeController extends Controller
         return view('search',
         [
           'error' => 'error'
-        ]);
+        ], compact('locations'));
       }
     }
 
@@ -108,7 +113,7 @@ class HomeController extends Controller
         $classifications=DB::table('jobs')->distinct()->select('classification')->get();
         $workTypes=DB::table('jobs')->distinct()->select('workType')->get();
 
-        return view('vendor.profile.preferences', ['user' => $user], compact('locations', 'classifications', 'workTypes')) ;
+        return view('vendor.profile.preferences', compact('users', 'locations', 'classifications', 'workTypes')) ;
     }
 
     public function editPreferences(Request $request)

@@ -18,20 +18,20 @@
                                 <th>Classification</th>
                                 <th>WorkType</th>
                             </tr>
-                            @foreach($jobs as $job)
+                                @foreach($jobs as $jobs)
                                 <tr>
-                                    <td>{{link_to_route('jobs.show',$job->title,[$job->id])}}</td>
-                                    <td>{{$job->Company}}</td>
-                                    <td>{{$job->Location}}</td>
-                                    <td>{{$job->Classification}}</td>
-                                    <td>{{$job->WorkType}}</td>
+                                    <td>{{link_to_route('jobs.show',$jobs->title,[$jobs->id])}}</td>
+                                    <td>{{$jobs->company}}</td>
+                                    <td>{{$jobs->location}}</td>
+                                    <td>{{$jobs->classification}}</td>
+                                    <td>{{$jobs->workType}}</td>
                                     <td>
-                                        {!! Form::open(array('route'=>['jobs.destroy',$job->id],'method'=>'DELETE')) !!}
-                                        {{link_to_route('jobs.edit','Edit',[$job->id],['class'=>'btn btn-primary'])}}
-                                        |
+                                      {!! Form::open(array('route'=>['jobs.destroy',$jobs->id],'method'=>'DELETE')) !!}
+                                      {{link_to_route('jobs.edit','Edit',[$jobs->id],['class'=>'btn btn-primary'])}}
+                                      |
 
-                                        {!! Form::button('Delete',['class'=>'btn btn-danger','type'=>'submit']) !!}
-                                        {!! Form::close() !!}
+                                      {!! Form::button('Delete',['class'=>'btn btn-danger','type'=>'submit']) !!}
+                                      {!! Form::close() !!}
 
                                     </td>
                                 </tr>

@@ -1,33 +1,59 @@
 @extends('layouts.app')
 
 @section('content')
+
+@desktop
+
 <link href="{{ asset('css/css.css') }}" rel="stylesheet">
 
 <div class="container2">
 
     <div class="searchtitle">
       <h2>Search</h2>
-      <p>Here are some recommendations that derive from your preferences...</p>
     </div>
-    <form action="searchresults" method="POST" role="search">
+
+    <form class="form-horizontal" method="POST" action="{{ route('searchresults') }}">
         {{ csrf_field() }}
-        <div class="input-group">
-            <input type="text" class="input2" name="search" placeholder="Search jobs">
-            <button type="submit" class="btn btn-primary button2">
+
+
+        <div class="form-group">
+
+            <input type="text" class="input2" name="search" placeholder="Search jobs" style="position:relative; left:10px">
+            <button type="submit" class="btn btn-primary button2" style="position:relative; left:50px">
                 Search
             </button>
         </div>
-    </form>
+
+        <div class="form-group">
+           <select id="location" name="location" class="form-control input1" placeholder="Select Location" style="position:relative; left:50px; bottom:17px;width: 200px">
+                  <option value=''>Select Location</option>
+                  @if(isset($locations))
+                   @foreach($locations as $loc)
+                   <option value="{{$loc->location}}">{{$loc->location}}</option>
+                   @endforeach
+                  @endif
+           </select>
+        </div>
+
+   </form>
+
+
+
+
+
+
+
+
+
 
     <div class="searchresault">
         @if(isset($details))
-
-            <p>The Search results for your query <b> {{ $query }} </b> are :</p>
 
             @if(count($details) == 1)
               <p>The Search yielded <b>{{count($details)}}</b> result for your query of <b>{{ $query }}:</b></p>
             @elseif(count($details) > 1)
               <p>The Search yielded <b>{{count($details)}}</b> results for your query <b>{{ $query }}:</b></p>
+            @endif
 
         <table class="table table-striped">
           <thead>
@@ -46,15 +72,18 @@
                   <td>{{$queried->location}}</td>
                   <td>{{$queried->classification}}</td>
                   <td>{{$queried->workType}}</td>
-                  <td>{{$queried->posted}}</td>
+                  <td>{{$queried->created_at}}</td>
               </tr>
               @endforeach
           </tbody>
         </table>
+        {{$details->links()}}
+
+
 
       @elseif(isset($error))
       <h4 >Sorry! We couldn't find anything. Maybe try taking the following steps…</h4>
-      <ul style="left:600px; position:absolute; text-align:left">
+      <ul style="position:relative; text-align:left">
         <li><h5>Change or remove filters such as classification to broaden your search.<h5></li>
         <li><h5>If using keywords, check the spelling.</h5></li>
       <ul>
@@ -106,7 +135,7 @@
                   <td>{{$queried->location}}</td>
                   <td>{{$queried->classification}}</td>
                   <td>{{$queried->workType}}</td>
-                  <td>{{$queried->posted}}</td>
+                  <td>{{$queried->created_at}</td>
               </tr>
               @endforeach
           </tbody>

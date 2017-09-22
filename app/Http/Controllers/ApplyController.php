@@ -25,11 +25,19 @@ class ApplyController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
+  // public function apply(Request $request)
+  // {
+  //     $user=Auth::User();
+  //
+  //     return view('applyconfirmation') ?: $this->applied($request, $user);
+  // }
+
   public function apply(Request $request)
   {
-      $user=Auth::User();
+    $input = $request->input('id');
+dd($input);
 
-      return view('applyconfirmation') ?: $this->applied($request, $user);
+
   }
 
   /**

@@ -21,4 +21,8 @@ class AdminController extends Controller
     {
         return view('admin.adminfaq');
     }
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
 }

@@ -20,7 +20,7 @@
 
                                      <div class="col-md-6">
                                        <select id="location" name="location" class="form-control" placeholder="Select Location">
-                                              <option value='{{$user->location}}'>Select Location</option>
+                                              <option value='NULL'>Select Location</option>
                                                @foreach($locations as $loc)
                                                <option value="{{$loc->location}}">{{$loc->location}}</option>
                                                @endforeach
@@ -33,7 +33,7 @@
 
                                      <div class="col-md-6">
                                        <select id="classification" name="classification" class="form-control">
-                                              <option value='{{$user->classification}}'>Select Classification</option>
+                                              <option value='NULL'>Select Classification</option>
                                                @foreach($classifications as $cla)
                                                <option value="{{$cla->classification}}">{{$cla->classification}}</option>
                                                @endforeach
@@ -46,7 +46,7 @@
 
                                    <div class="col-md-6">
                                      <select id="workType" name="workType" class="form-control">
-                                            <option value='{{$user->workType}}'>Select Work Type</option>
+                                            <option value='NULL'>Select Work Type</option>
                                              @foreach($workTypes as $wor)
                                              <option value="{{$wor->workType}}">{{$wor->workType}}</option>
                                              @endforeach

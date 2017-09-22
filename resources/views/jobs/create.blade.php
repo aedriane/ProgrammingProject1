@@ -8,7 +8,7 @@
                     <div class="panel-heading">Jobs</div>
                     <div class="panel-body">
 
-                        {!! Form::open(array('route=>jobs.store')) !!}
+                        {!! Form::open(array('route'=>'jobs.store')) !!}
                         <div class="form-group">
                             {!! Form::label('title','Enter Title') !!}
                             {!! Form::text('title',null,['class'=>'form-control'])!!}
@@ -30,25 +30,24 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('description','Enter Job Description') !!}
-                            {!! Form::text('description',null,['class'=>'form-control'])!!}
+                            {!! Form::label('workType','Enter WorkType') !!}
+                            {!! Form::text('workType',null,['class'=>'form-control'])!!}
                         </div>
 
-                    </div>
+                        <div class="form-group">
+                            {!! Form::label('description','Enter Job Description') !!}
+                            {!! Form::textarea('description',null,['class'=>'form-control'])!!}
+                        </div>
 
-                    <div class="form-group">
-                        {!! Form::label('workType','Enter WorkType') !!}
-                        {!! Form::text('workType',null,['class'=>'form-control'])!!}
-                    </div>
+                        <div class="form-group">
+                            {!! Form::button('Create!',['type'=>'submit','class'=>'btn btn-primary']) !!}
+                        </div>
+                        {!! Form::close() !!}
 
-                    <div class="form-group">
-                        {!! Form::button('Update',['type'=>'submit','class'=>'btn btn-primary']) !!}
-                    </div>
-                    {!! Form::close() !!}
                 </div>
             </div>
 
-                @if($errors->has())
+                @if ( count( $errors ) > 0 )
                     <ul class="aler alert-danger">
                         @foreach($errors->all() as $error)
                             <li>{{$error}}</li>

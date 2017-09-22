@@ -5,7 +5,7 @@
 <div class="container">
     <table class="table table-striped">
 
-      <a href="{{'/applyconfirmation'}}" >
+      <a href="{{route('apply')}}" >
           {{ csrf_field() }}
         <thead>
             <tr>
@@ -25,7 +25,7 @@
                 <td>{{$job->location}}</td>
                 <td>{{$job->classification}}</td>
                 <td>{{$job->workType}}</td>
-                <td>{{$job->posted}}</td>
+                <td>{{$job->created_at}}</td>
             </tr>
             @endforeach
         </tbody>

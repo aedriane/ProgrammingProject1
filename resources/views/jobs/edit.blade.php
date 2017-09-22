@@ -8,7 +8,8 @@
                     <div class="panel-heading">Update Job</div>
                     <div class="panel-body">
 
-                        {!! Form::model($job ,array('route'=>['jobs.update', $job->id],'method'=>'PUT')) !!}
+                      {!! Form::model($jobs,array('route'=>['jobs.update', $jobs->id],'method'=>'PUT')) !!}
+
                         <div class="form-group">
                             {!! Form::label('title','Enter Title') !!}
                             {!! Form::text('title',null,['class'=>'form-control'])!!}
@@ -30,15 +31,13 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('description','Enter Job Description') !!}
-                            {!! Form::text('description',null,['class'=>'form-control'])!!}
-                        </div>
-
+                            {!! Form::label('workType','Enter WorkType') !!}
+                            {!! Form::text('workType',null,['class'=>'form-control'])!!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('workType','Enter WorkType') !!}
-                            {!! Form::text('workType',null,['class'=>'form-control'])!!}
+                            {!! Form::label('description','Enter Job Description') !!}
+                            {!! Form::textarea('description',null,['class'=>'form-control'])!!}
                         </div>
 
                         <div class="form-group">
@@ -48,7 +47,7 @@
                     </div>
                 </div>
 
-                @if($errors->has())
+                @if ( count( $errors ) > 0 )
                     <ul class="alert alert-danger">
                         @foreach($errors->all() as $error)
                             <li>{{$error}}</li>

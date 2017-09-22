@@ -91,8 +91,11 @@
                     </button>
 
                     <!-- Branding Image -->
+                    @if(Auth::guest())
+                    <a href="{{URL::to('/')}}"><img class="logo" src={{asset('img/JobHLogo.png')}} alt="Logo" style="width:240px;height:73px;"></a>
+                    @else
                     <a href="{{URL::to('admin/home')}}"><img class="logo" src={{asset('img/JobHLogo.png')}} alt="Logo" style="width:240px;height:73px;"></a>
-
+                    @endif
 
                 </div>
 
@@ -108,7 +111,6 @@
                         @if (Auth::guest())
                             <li><a style="color:#fff" class="loginregister" href="{{ route('admin_login') }}">ADMIN Login</a></li>
                             <li><a style="color:#fff" class="loginregister" href="{{ route('login') }}">Job Seeker Login</a></li>
-                            <li><a style="color:#fff" class="loginregister" href="{{ route('admin_register') }}">ADMIN Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a style="color:#ffffff" class="auth loginregister" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -117,7 +119,6 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                      <a href="{{ route('profile') }}">Profile</a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -135,12 +136,14 @@
                 </div>
             </div>
             <center class="spf">
-              <a href="{{ route('search') }}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Search</p></a>
-              <a href="{{ route('profile') }}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Profile</p></a>
               @if(Auth::guest())
-              <a href="{{ route('faq') }}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
+              <a href="{{route('admin_login')}}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Jobs</p></a>
+              <a href="{{route('admin_login')}}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Users</p></a>
+              <a href="{{route('faq')}}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
               @else
-              <a href="{{ route('adminfaq') }}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
+              <a href="{{route('jobs.index')}}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Jobs</p></a>
+              <a href="{{route('users.index')}}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Users</p></a>
+              <a href="{{route('adminfaq')}}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
             </center>
               @endif
         </nav>

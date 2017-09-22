@@ -10,6 +10,11 @@ use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth:admin');
+  }
+
     /**
      * Display a listing of the resource.
      *
@@ -52,6 +57,7 @@ class UserController extends Controller
      */
     public function show(Users $user)
     {
+            dd($user);
         return view('users.show', compact('user'));
     }
     /**

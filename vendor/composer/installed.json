@@ -3788,45 +3788,6 @@
         ]
     },
     {
-        "name": "mressex/laravel-auth-profile",
-        "version": "v1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/MrEssex/laravel-auth-profile.git",
-            "reference": "a090d1922cfb05b832d690701e271f2645fd50db"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/MrEssex/laravel-auth-profile/zipball/a090d1922cfb05b832d690701e271f2645fd50db",
-            "reference": "a090d1922cfb05b832d690701e271f2645fd50db",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": "^5.4",
-            "php": ">=5.4.0"
-        },
-        "time": "2017-06-11T05:55:31+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "MrEssex\\LaravelAuthProfile\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Kyle Essex",
-                "email": "Kylegavinessex@hotmail.com"
-            }
-        ],
-        "description": "Building off of the default Laravel Authentication. View and Edit User Profiles"
-    },
-    {
         "name": "hesto/core",
         "version": "v2.0.0",
         "version_normalized": "2.0.0.0",
@@ -3914,5 +3875,97 @@
             "laravel",
             "multi"
         ]
+    },
+    {
+        "name": "kyslik/column-sortable",
+        "version": "5.4.7",
+        "version_normalized": "5.4.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Kyslik/column-sortable.git",
+            "reference": "e2ae9da36ab118a0c7b9744028e0718b46c46923"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Kyslik/column-sortable/zipball/e2ae9da36ab118a0c7b9744028e0718b46c46923",
+            "reference": "e2ae9da36ab118a0c7b9744028e0718b46c46923",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/database": "5.4.*",
+            "illuminate/support": "5.4.*",
+            "php": ">=5.6.4"
+        },
+        "require-dev": {
+            "orchestra/testbench": "3.4.*",
+            "phpunit/phpunit": "~5.0"
+        },
+        "time": "2017-08-31T13:02:47+00:00",
+        "type": "package",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Kyslik\\ColumnSortable\\": "src/ColumnSortable/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Martin Kiesel",
+                "email": "martin.kiesel@gmail.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Package for handling column sorting in Laravel 5.4",
+        "keywords": [
+            "column",
+            "laravel",
+            "one-to-one",
+            "sort",
+            "sortable",
+            "sorting"
+        ]
+    },
+    {
+        "name": "mressex/laravel-auth-profile",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/MrEssex/laravel-auth-profile.git",
+            "reference": "a090d1922cfb05b832d690701e271f2645fd50db"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/MrEssex/laravel-auth-profile/zipball/a090d1922cfb05b832d690701e271f2645fd50db",
+            "reference": "a090d1922cfb05b832d690701e271f2645fd50db",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "^5.4",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-06-11T05:55:31+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MrEssex\\LaravelAuthProfile\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Essex",
+                "email": "Kylegavinessex@hotmail.com"
+            }
+        ],
+        "description": "Building off of the default Laravel Authentication. View and Edit User Profiles"
     }
 ]
