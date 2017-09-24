@@ -61,8 +61,10 @@ class HomeController extends Controller
     public function search()
     {
       $locations=DB::table('jobs')->distinct()->select('location')->get();
+      $classifications=DB::table('jobs')->distinct()->select('classification')->get();
+      $workTypes=DB::table('jobs')->distinct()->select('workType')->get();
 
-      return view('search', compact('locations'));
+      return view('search', compact('locations', 'classifications', 'workTypes'));
     }
 
 
@@ -70,22 +72,52 @@ class HomeController extends Controller
     public function searchresults()
     {
       $locations=DB::table('jobs')->distinct()->select('location')->get();
+      $classifications=DB::table('jobs')->distinct()->select('classification')->get();
+      $workTypes=DB::table('jobs')->distinct()->select('workType')->get();
+
       $searchKeyword=Input::get('search');
       $searchLocation=Input::get('location');
+      $searchClassification=Input::get('classification');
+      $searchWorkType=Input::get('workType');
 
       $queried=DB::table('jobs')
-      ->where('jobs.title', 'LIKE', '%'.$searchKeyword.'%')
-      ->where('jobs.location', 'LIKE', '%'.$searchLocation.'%')
-      // ->orWhere('classification', 'LIKE', '%'.$search.'%')
-      // ->orwhere('workType', 'LIKE', '%'.$search.'%')
+      ->where(function($query) use ($searchKeyword)
+      {
+        $query->where('jobs.title', 'LIKE', '%'.$searchKeyword.'%');
+        $query->orwhere('jobs.location', 'LIKE', '%'.$searchKeyword.'%');
+      })
+
+      ->where(function($query) use ($searchLocation)
+      {
+        $query->where('jobs.location', 'LIKE', '%'.$searchLocation.'%');
+      })
+
+      ->where(function($query) use ($searchClassification)
+      {
+        $query->where('jobs.classification', 'LIKE', '%'.$searchClassification.'%');
+      })
+
+      ->where(function($query) use ($searchWorkType)
+      {
+        $query->where('jobs.workType', 'LIKE', '%'.$searchWorkType.'%');
+      })
       ->orderBy('jobs.created_at', 'asc')
-      ->paginate(3);
+      ->Paginate(5)
+      ->setPath('');
+
+      $pagination=$queried->appends(array
+      (
+        'search' => Input::get('search'),
+        'location' => Input::get('location'),
+        'classification' => Input::get('classification'),
+        'workType' => Input::get('workType')
+      ));
 
       if(count($queried) > 0)
       {
-        return view('search', compact('locations'))
+        return view('search', compact('locations', 'classifications', 'workTypes'))
         ->withDetails($queried)
-        ->withQuery($searchKeyword, $searchLocation);
+        ->withQuery($searchKeyword, $searchLocation, $searchClassification, $searchWorkType);
       }
 
       else

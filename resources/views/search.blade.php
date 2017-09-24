@@ -18,7 +18,7 @@
 
         <div class="form-group">
 
-            <input type="text" class="input2" name="search" placeholder="Search jobs" style="position:relative; left:10px">
+            <input type="text" class="input2" name="search" placeholder="Enter Keyword" style="position:relative; left:10px">
             <button type="submit" class="btn btn-primary button2" style="position:relative; left:50px">
                 Search
             </button>
@@ -33,7 +33,27 @@
                    @endforeach
                   @endif
            </select>
+
+           <select id="classification" name="classification" class="form-control input1" placeholder="Select Classification" style="position:relative; left:90px; bottom:17px;width: 200px">
+                  <option value=''>Select Classification</option>
+                  @if(isset($classifications))
+                   @foreach($classifications as $cla)
+                   <option value="{{$cla->classification}}">{{$cla->classification}}</option>
+                   @endforeach
+                  @endif
+           </select>
+
+           <select id="workType" name="workType" class="form-control input1" placeholder="Select Work Type" style="position:relative; left:130px; bottom:17px;width: 200px">
+                  <option value=''>Select Work Type</option>
+                  @if(isset($workTypes))
+                   @foreach($workTypes as $wTy)
+                   <option value="{{$wTy->workType}}">{{$wTy->workType}}</option>
+                   @endforeach
+                  @endif
+           </select>
         </div>
+
+
 
    </form>
 
@@ -77,7 +97,7 @@
               @endforeach
           </tbody>
         </table>
-        {{$details->links()}}
+      {{$details->render()}}
 
 
 

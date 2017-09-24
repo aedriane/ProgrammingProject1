@@ -35,9 +35,6 @@ class ApplyController extends Controller
   public function apply(Request $request)
   {
     $input = $request->input('id');
-dd($input);
-
-
   }
 
   /**
