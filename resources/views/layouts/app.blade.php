@@ -17,63 +17,63 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style type="text/css">
-    p.chosepg{
-      width:100%;
-      font-size: 24px;
-      font-family: Arial;
-      float: left;
-      text-decoration: none;
-      color:#888888;
-      line-height: 100%;
-    }
+      p.chosepg{
+        width:100%;
+        font-size: 24px;
+        font-family: Arial;
+        float: left;
+        text-decoration: none;
+        color:#888888;
+        line-height: 100%;
+      }
 
-    img.logo{
-      position: relative;
-    }
+      img.logo{
+        position: relative;
+      }
 
-    a.loginregister{
-      position: absolute;
-      margin-top: 10px;
-      font-size: 16px;
-      font-family: arial;
-    }
+      a.loginregister{
+        position: absolute;
+        margin-top: 10px;
+        font-size: 16px;
+        font-family: arial;
+      }
 
-    a.email{
-      position: absolute;
-      top:5px;
-    }
+      a.email{
+        position: absolute;
+        top:5px;
+      }
 
-    ul.auth{
-      position:absolute;
-      top:80px;
-    }
-    .navigation{
-      height:75px;
-      background-color: #78bcff;
-      border-bottom: 2px solid #bcbcbc;
-    }
-    .spf{
-      width: 60%;
-      margin-left: 20%;
-    }
-    .container1{
-      height: 75px;
-      width: 80%;
-      margin-left: 10%;
-    }
-    .pages{
-      width:33%;
-      background-color: #ffffff;
-      float:left;
-      text-align: center;
-      border-right: #eeeeee solid 1px;
-      border-bottom: #eeeeee solid 1px;
-    }
-    body{
-      background:url(img/JobHBG1.png) no-repeat;
-      background-attachment: fixed;
-      background-size: 100%;
-    }
+      ul.auth{
+        position:absolute;
+        top:80px;
+      }
+      .navigation{
+        height:75px;
+        background-color: #78bcff;
+        border-bottom: 2px solid #bcbcbc;
+      }
+      .spf{
+        width: 60%;
+        margin-left: 20%;
+      }
+      .container1{
+        height: 75px;
+        width: 80%;
+        margin-left: 10%;
+      }
+      .pages{
+        width:33%;
+        background-color: #ffffff;
+        float:left;
+        text-align: center;
+        border-right: #eeeeee solid 1px;
+        border-bottom: #eeeeee solid 1px;
+      }
+      body{
+        background:url(img/JobHBG1.png) no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+      }
     </style>
 </head>
 <body>
@@ -92,8 +92,6 @@
 
                     <!-- Branding Image -->
                     <a href="{{URL::to('/')}}"><img class="logo" src={{asset('img/JobHLogo.png')}} alt="Logo" style="width:240px;height:73px;"></a>
-
-
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -106,7 +104,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a style="color:#fff" class="loginregister" href="{{ route('admin_login') }}">ADMIN Login</a></li>
+                            <li><a style="color:#fff" class="loginregister" href="{{ route('admin_login') }}">Administrator Login</a></li>
                             <li><a style="color:#fff" class="loginregister" href="{{ route('login') }}">Job Seeker Login</a></li>
                             <li><a style="color:#fff" class="loginregister" href="{{ route('register') }}">Register</a></li>
                         @else
