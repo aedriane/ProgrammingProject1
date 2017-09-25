@@ -97,6 +97,33 @@
               @endforeach
           </tbody>
         </table>
+
+        <!--  
+        @foreach($details as $queried)
+        <!--<h3>Title</h3>
+        <h4>Location:</h4>
+        <h4>Classification:</h4>
+        <h4>Work Type</h4>
+        <h4>Posted</h4>
+        <hr>
+        <h3><b><a href="search/{{$queried->id}}">{{$queried->title}}</a></b></h3>
+        <h3><b>{{$queried->location}}</b></h3>
+        <h4><li>{{$queried->classification}}</li></h4>
+        <h4>{{$queried->workType}}</h4>
+        <h4>{{$queried->created_at}}</h4>
+        @endforeach-->
+
+        @foreach($details as $queried)
+        <hr>
+        <h3><b><a href="search/{{$queried->id}}">{{$queried->title}}</a></b></h3>
+        <h3><b>{{$queried->location}}</b></h3>
+        <h4>{{$queried->classification}}</h4>
+        <ul style="position:relative; text-align:left">
+          <h4><li>{{$queried->workType}}</li></h4>
+          <h4><li>{{$queried->created_at}}</li></h4>
+        </ul>
+        @endforeach
+
       {{$details->render()}}
 
 
@@ -138,7 +165,7 @@
           @elseif(count($details) > 1)
             <p>The Search yielded <b>{{count($details)}}</b> results for your query <b>{{ $query }}:</b></p>
           @endif
-        <table class="table table-striped">
+        <!--<table class="table table-striped">
           <thead>
               <tr>
                   <th>Title</th>
@@ -149,17 +176,21 @@
               </tr>
           </thead>
           <tbody>
-              <tr>
-                  @foreach($details as $queried)
-                  <td><a href="search/{{$queried->id}}">{{$queried->title}}</td></a>
-                  <td>{{$queried->location}}</td>
-                  <td>{{$queried->classification}}</td>
-                  <td>{{$queried->workType}}</td>
-                  <td>{{$queried->created_at}</td>
-              </tr>
-              @endforeach
+
           </tbody>
-      </table>
+      </table>-->
+
+
+        @foreach($details as $queried)
+        <hr>
+        <h3><b><a href="search/{{$queried->id}}">{{$queried->title}}</a></b></h3>
+        <h3><b>{{$queried->location}}</b></h3>
+        <h4>{{$queried->classification}}</h4>
+        <ul style="position:relative; text-align:left">
+          <h4><li>{{$queried->workType}}</li></h4>
+          <h4><li>{{$queried->created_at}}</li></h4>
+        </ul>
+        @endforeach
 
       @elseif(isset($error))
       <h4 >Sorry! We couldn't find anything. Maybe try taking the following steps…</h4>

@@ -3,11 +3,11 @@
 @section('content')
 <link href="{{ asset('css/css.css') }}" rel="stylesheet">
 
-<div class="container2">
+<div class="container"> <!-- Changed form container2 to container -->
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="">
-                <div class="panel-heading title">Register</div>
+            <!--<div class="">-->
+                <h2><center><strong>Registration Page</strong></center></h2>
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
@@ -17,10 +17,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label for="username" class="inputbna">Username</label>
+                            <label for="username" class="col-md-4 control-label">Username</label>
 
                         <div class="col-md-6">
-                            <input id="username" type="text" class="form-control input1" name="username" value="{{ old('username') }}" required>
+                            <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required>
 
                             @if ($errors->has('username'))
                                 <span class="help-block">
@@ -32,10 +32,10 @@
 
 
                         <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
-                            <label for="firstname" class="inputbna">First Name</label>
+                            <label for="firstname" class="col-md-4 control-label">First Name</label>
 
                             <div class="col-md-6">
-                                <input id="firstname" type="text" class="form-control input1" name="firstname" value="{{ old('firstname') }}" required autofocus>
+                                <input id="firstname" type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" required autofocus>
 
                                 @if ($errors->has('firstname'))
                                     <span class="help-block">
@@ -46,10 +46,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                            <label for="lastname" class="inputbna">Last Name</label>
+                            <label for="lastname" class="col-md-4 control-label">Last Name</label>
 
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control input1" name="lastname" value="{{ old('lastname') }}" required autofocus>
+                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required autofocus>
 
                                 @if ($errors->has('lastname'))
                                     <span class="help-block">
@@ -60,10 +60,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="inputbna">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control input1" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -74,10 +74,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="inputbna">Password</label>
+                            <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control input1" name="password" required>
+                                <input id="password" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -88,10 +88,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="inputbna">Confirm Password</label>
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control input1" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
 
@@ -101,10 +101,10 @@
                         </div>
 
                         <div class="form-group">
-                         <label for="location" class="inputbna">Location</label>
+                         <label for="location" class="col-md-4 control-label">Location</label>
 
                          <div class="col-md-6">
-                           <select id="location" name="location" class="form-control input1" placeholder="Select Location">
+                           <select id="location" name="location" class="form-control" placeholder="Select Location">
                                   <option value='NULL'>Select Location</option>
                                    @foreach($locations as $loc)
                                    <option value="{{$loc->location}}">{{$loc->location}}</option>
@@ -114,10 +114,10 @@
                      </div>
 
                         <div class="form-group">
-                          <label for="classification" class="inputbna">Classification</label>
+                          <label for="classification" class="col-md-4 control-label">Classification</label>
 
                           <div class="col-md-6">
-                            <select id="classification" name="classification" class="form-control input1">
+                            <select id="classification" name="classification" class="form-control">
                                    <option value='NULL'>Select Classification</option>
                                     @foreach($classifications as $cla)
                                     <option value="{{$cla->classification}}">{{$cla->classification}}</option>
@@ -127,10 +127,10 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="workType" class="inputbna">Work Type</label>
+                        <label for="workType" class="col-md-4 control-label">Work Type</label>
 
                         <div class="col-md-6">
-                          <select id="workType" name="workType" class="form-control input1">
+                          <select id="workType" name="workType" class="form-control">
                                  <option value='NULL'>Select Classification</option>
                                   @foreach($workTypes as $work)
                                   <option value="{{$work->workType}}">{{$work->workType}}</option>
@@ -150,7 +150,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            <!--</div>-->
         </div>
     </div>
 </div>
