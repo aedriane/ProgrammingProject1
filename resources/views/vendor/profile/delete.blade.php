@@ -6,7 +6,7 @@
             <div class="col-sm-3">
                 @include('profile::_menu')
             </div>
-            <div class="col-sm-9">
+            <div class="col-md-9" style="position:relative;right:11px; width:828px; right:26px;">
                 @if($errors->any())
                     <div class="alert alert-danger">
                         <ul>

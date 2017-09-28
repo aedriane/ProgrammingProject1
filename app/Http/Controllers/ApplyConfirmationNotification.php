@@ -16,10 +16,10 @@ class ApplyConfirmationNotification extends Notification
      *
      * @return void
      */
-    public function __construct($user)
-    {
-        $this->user = $user;
-    }
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
 
     /**
      * Get the notification's delivery channels.

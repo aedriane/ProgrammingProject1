@@ -9,7 +9,7 @@
 <div class="container2">
 
     <div class="searchtitle">
-      <h2>Search</h2>
+      <center><h1><b>Search</b></h1></center>
     </div>
 
     <form class="form-horizontal" method="POST" action="{{ route('searchresults') }}">
@@ -98,7 +98,7 @@
           </tbody>
         </table>
 
-        <!--  
+        <!--
         @foreach($details as $queried)
         <!--<h3>Title</h3>
         <h4>Location:</h4>

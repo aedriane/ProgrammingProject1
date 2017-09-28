@@ -9,6 +9,7 @@ use Input;
 use Auth;
 use Carbon;
 use Session;
+use Illuminate\Database\Query\Builder;
 
 class HomeController extends Controller
 {
@@ -46,11 +47,54 @@ class HomeController extends Controller
     public function recommendations()
     {
 
+        $locations=Auth::user()->location;
+        $classifications=Auth::user()->classification;
+        $workTypes=Auth::user()->workType;
 
         $jobs=DB::table('jobs')
-        ->where('jobs.location', '=', Auth::user()->location)
-        ->where('jobs.classification', '=', Auth::user()->classification)
-        ->where('jobs.workType', '=', Auth::user()->workType)
+        ->where(function($query) use ($locations, $classifications, $workTypes)
+        {
+          if($locations != 'NULL' && $classifications == 'NULL' && $workTypes == 'NULL')
+          {
+            $query->where('jobs.location', '=', $locations);
+          }
+
+          else if($classifications != 'NULL' && $locations == 'NULL' && $workTypes == 'NULL')
+          {
+            $query->where('jobs.classification', '=', $classifications);
+          }
+
+          else if($workTypes != 'NULL' && $locations == 'NULL' && $classifications == 'NULL')
+          {
+            $query->where('jobs.workType', '=', $workTypes);
+          }
+
+          else if($locations != 'NULL' && $classifications != 'NULL' && $workTypes == 'NULL')
+          {
+            $query->where('jobs.location', '=', $locations);
+            $query->where('jobs.classification', '=', $classifications);
+          }
+
+          else if($locations != 'NULL' && $classifications == 'NULL' && $workTypes != 'NULL')
+          {
+            $query->where('jobs.location', '=', $locations);
+            $query->where('jobs.workType', '=', $workTypes);
+          }
+
+          else if($locations == 'NULL' && $classifications != 'NULL' && $workTypes != 'NULL')
+          {
+            $query->where('jobs.classification', '=', $classifications);
+            $query->where('jobs.workType', '=', $workTypes);
+          }
+
+          else if($locations != 'NULL' && $classifications != 'NULL' && $workTypes != 'NULL')
+          {
+            $query->where('jobs.location', '=', $locations);
+            $query->where('jobs.classification', '=', $classifications);
+            $query->where('jobs.workType', '=', $workTypes);
+          }
+
+        })
         ->orderByRaw("RAND()")
         ->take(3)
         ->get();
@@ -85,6 +129,8 @@ class HomeController extends Controller
       {
         $query->where('jobs.title', 'LIKE', '%'.$searchKeyword.'%');
         $query->orwhere('jobs.location', 'LIKE', '%'.$searchKeyword.'%');
+        $query->orwhere('jobs.classification', 'LIKE', '%'.$searchKeyword.'%');
+        $query->orwhere('jobs.workType', 'LIKE', '%'.$searchKeyword.'%');
       })
 
       ->where(function($query) use ($searchLocation)

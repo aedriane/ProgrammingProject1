@@ -2,7 +2,9 @@
 
 @section('content')
 
-<div class="container">
+<link href="{{ asset('css/css.css') }}" rel="stylesheet">
+
+<div class="container2">
     <table class="table table-striped">
 
       <a href="{{route('apply')}}" >

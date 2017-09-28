@@ -9,8 +9,8 @@
 <div class="container2">
 
     <div class="searchresault">
-      <h2>Recommendations...</h2>
-      <p>Here are some recommendations that derive from your preferences...</p>
+      <center><h1><b>Recommendations...</b></h1>
+      <p>Here are some recommendations that derive from your preferences...</p></center>
     </div>
     @if(isset($jobs))
 
@@ -29,7 +29,7 @@
                 <h4 style="position:absolute; top:350px; left:550px">Sorry! There are no recommended jobs pertaining to your preferences at the moment...</h4>
                 <h4 style="position:absolute; top:370px; left:560px">Check back later to discover potential new jobs in regards to your preferences!</h4>
 
-            @elseif(count($jobs) > 1)
+            @elseif(count($jobs) >= 1)
 
             @foreach($jobs as $job)
             <tr>
@@ -37,7 +37,7 @@
                 <td>{{$job->location}}</td>
                 <td>{{$job->classification}}</td>
                 <td>{{$job->workType}}</td>
-                <td>{{$job->posted}}</td>
+                <td>{{$job->created_at}}</td>
             </tr>
             @endforeach
         </tbody>
@@ -78,7 +78,7 @@
                 <td>{{$job->location}}</td>
                 <td>{{$job->classification}}</td>
                 <td>{{$job->workType}}</td>
-                <td>{{$job->posted}}</td>
+                <td>{{$job->created_at}}</td>
             </tr>
             @endforeach
         </tbody>

@@ -8,7 +8,7 @@
             </div>
             <div class="col-sm-9">
                 <div class="row">
-                    <div class="col-md-12">
+                  <div class="col-md-13" style="position:relative;right:11px; width:797px;">
                         <div class="panel panel-default">
                             <div class="panel-heading">Preferences</div>
                             <div class="panel-body">

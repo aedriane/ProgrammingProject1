@@ -113,7 +113,7 @@
                             <li><a style="color:#fff" class="loginregister" href="{{ route('login') }}">Job Seeker Login</a></li>
                         @else
                             <li class="dropdown">
-                                <a style="color:#ffffff" class="auth loginregister" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a style="color:#ffffff; backgroundColor:#78bcff" class="auth loginregister" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->email }} <span class="caret"></span>
                                 </a>
 
@@ -247,7 +247,7 @@
 
                         @else
                             <li class="dropdown">
-                                <a class="auth" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a class="auth" href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->email }} <span class="caret"></span>
                                 </a>
 

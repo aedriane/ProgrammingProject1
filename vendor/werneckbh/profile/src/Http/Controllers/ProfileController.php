@@ -38,7 +38,7 @@ class ProfileController extends Controller
      */
     public function storeContactInfo(ProfileRequest $request)
     {
-        $this->service->updateContacInformation($request->only(['firstname', 'email']));
+        $this->service->updateContacInformation($request->only(['firstname', 'lastname', 'email']));
 
         return redirect()->route('profile');
     }

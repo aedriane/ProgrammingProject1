@@ -6,10 +6,10 @@
             <div class="col-sm-3">
                 @include('profile::_menu')
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-8">
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-13" style="position:relative;right:11px; width:797px">
                         <div class="panel panel-default">
                             <div class="panel-heading">Profile Picture</div>
                             <div class="panel-body">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                  <div class="col-md-13" style="position:relative;right:11px; width:797px; bottom:22px">
                         <div class="panel panel-default">
                             <div class="panel-heading">Contact Information</div>
                             <div class="panel-body">

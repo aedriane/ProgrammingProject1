@@ -69,11 +69,27 @@
         border-right: #eeeeee solid 1px;
         border-bottom: #eeeeee solid 1px;
       }
+
+      .profilemenu{
+        position:relative;
+        width:200px;
+        left:66px;
+        text-align: center;
+      }
+
       body{
-        background:url(img/JobHBG1.png) no-repeat;
+        background:url(/img/JobHBG1.png);
         background-attachment: fixed;
         background-size: 100%;
       }
+
+      html{
+        background:url(/img/JobHBG1.png);
+        background-attachment: fixed;
+        background-size: 100%;
+      }
+
+
     </style>
 </head>
 <body>
@@ -109,7 +125,7 @@
                             <li><a style="color:#fff" class="loginregister" href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a style="color:#ffffff" class="auth loginregister" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a style="color:#ffffff; backgroundColor:#78bcff" class="auth loginregister" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->email }} <span class="caret"></span>
                                 </a>
 

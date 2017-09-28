@@ -13,7 +13,8 @@ class ProfileService
      */
     public function updateContacInformation(array $data)
     {
-        Auth::user()->name = $data['name'];
+        Auth::user()->firstname = $data['firstname'];
+        Auth::user()->lastname = $data['lastname'];        
         Auth::user()->email = $data['email'];
         Auth::user()->save();
     }

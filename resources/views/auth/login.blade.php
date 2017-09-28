@@ -4,7 +4,7 @@
 <link href="{{ asset('css/css.css') }}" rel="stylesheet">
 
 <!--Testing for mobile -->
-<div class="container"> <!--changed from container2 to container-->
+<div class="container2"> <!--changed from container2 to container-->
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h2><center><strong>Job Seeker Login</strong></center></h2>

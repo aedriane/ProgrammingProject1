@@ -3,7 +3,7 @@
 @section('content')
 <link href="{{ asset('css/css.css') }}" rel="stylesheet">
 
-<div class="container"> <!-- Changed form container2 to container -->
+<div class="container2"> <!-- Changed form container2 to container -->
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <!--<div class="">-->
