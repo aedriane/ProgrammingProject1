@@ -5,37 +5,29 @@
 <link href="{{ asset('css/css.css') }}" rel="stylesheet">
 
 <div class="container2">
+
     <table class="table table-striped">
 
-      <a href="{{route('apply')}}" >
-          {{ csrf_field() }}
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Location</th>
-                <th>Classification</th>
-                <th>Work Type</th>
-                <th>Posted</th>
-            </tr>
-        </thead>
         <tbody>
             @foreach($jobs as $job)
-            <tr>
-                <td>{{$job->title}}</td>
-                <td>{{$job->description}}</td>
-                <td>{{$job->location}}</td>
-                <td>{{$job->classification}}</td>
-                <td>{{$job->workType}}</td>
-                <td>{{$job->created_at}}</td>
-            </tr>
+
+            <h1><b>{{$job->title}}</b></h1><br>
+            <h3>{{$job->company}}</h3><br>
+            <h4>Location: {{$job->location}}</h4><br>
+            <h4>Classification: {{$job->classification}}</h4><br>
+            <h4>Work Type: {{$job->workType}}</h4><br>
+            <p>{{$job->description}}</p></br>
+            <p>Posted on: {{$job->created_at}}</p>
             @endforeach
         </tbody>
     </table>
 
+    <a href="{{route('apply')}}" >
+        {{ csrf_field() }}
+
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary" style="position:relative;left:80px">
                 Apply
             </button>
         </div>

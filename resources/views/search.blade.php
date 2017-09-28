@@ -15,7 +15,6 @@
     <form class="form-horizontal" method="POST" action="{{ route('searchresults') }}">
         {{ csrf_field() }}
 
-
         <div class="form-group">
 
             <input type="text" class="input2" name="search" placeholder="Enter Keyword" style="position:relative; left:10px">
@@ -57,15 +56,6 @@
 
    </form>
 
-
-
-
-
-
-
-
-
-
     <div class="searchresault">
         @if(isset($details))
 
@@ -75,58 +65,20 @@
               <p>The Search yielded <b>{{count($details)}}</b> results for your query <b>{{ $query }}:</b></p>
             @endif
 
-        <table class="table table-striped">
-          <thead>
-              <tr>
-                  <th>Title</th>
-                  <th>Location</th>
-                  <th>Classification</th>
-                  <th>Work Type</th>
-                  <th>Posted</th>
-              </tr>
-          </thead>
-          <tbody>
-              @foreach($details as $queried)
-              <tr>
-                  <td><a href="search/{{$queried->id}}">{{$queried->title}}</td></a>
-                  <td>{{$queried->location}}</td>
-                  <td>{{$queried->classification}}</td>
-                  <td>{{$queried->workType}}</td>
-                  <td>{{$queried->created_at}}</td>
-              </tr>
-              @endforeach
-          </tbody>
-        </table>
 
-        <!--
-        @foreach($details as $queried)
-        <!--<h3>Title</h3>
-        <h4>Location:</h4>
-        <h4>Classification:</h4>
-        <h4>Work Type</h4>
-        <h4>Posted</h4>
-        <hr>
-        <h3><b><a href="search/{{$queried->id}}">{{$queried->title}}</a></b></h3>
-        <h3><b>{{$queried->location}}</b></h3>
-        <h4><li>{{$queried->classification}}</li></h4>
-        <h4>{{$queried->workType}}</h4>
-        <h4>{{$queried->created_at}}</h4>
-        @endforeach-->
 
         @foreach($details as $queried)
         <hr>
         <h3><b><a href="search/{{$queried->id}}">{{$queried->title}}</a></b></h3>
-        <h3><b>{{$queried->location}}</b></h3>
-        <h4>{{$queried->classification}}</h4>
-        <ul style="position:relative; text-align:left">
-          <h4><li>{{$queried->workType}}</li></h4>
-          <h4><li>{{$queried->created_at}}</li></h4>
+        <h4><b>Location:   </b>{{$queried->location}}</h4>
+        <h5><b>Classification:   </b>{{$queried->classification}}</h5>
+        <ul style="position:relative; text-align:left; list-style-position:outside">
+          <h5><b>Work Type:   </b>{{$queried->workType}}</h5>
+          <h5><b>Created At:   </b>{{$queried->created_at}}</h5>
         </ul>
         @endforeach
 
       {{$details->render()}}
-
-
 
       @elseif(isset($error))
       <h4 >Sorry! We couldn't find anything. Maybe try taking the following steps…</h4>
@@ -142,9 +94,7 @@
 @enddesktop
 
 @mobile
-
 <div class="container">
-
     <center><h3>Search</h3><center></br>
     <form action="searchresults" method="POST" role="search">
         {{ csrf_field() }}
@@ -183,13 +133,11 @@
 
         @foreach($details as $queried)
         <hr>
-        <h3><b><a href="search/{{$queried->id}}">{{$queried->title}}</a></b></h3>
-        <h3><b>{{$queried->location}}</b></h3>
-        <h4>{{$queried->classification}}</h4>
-        <ul style="position:relative; text-align:left">
-          <h4><li>{{$queried->workType}}</li></h4>
-          <h4><li>{{$queried->created_at}}</li></h4>
-        </ul>
+        <h4><b><a href="search/{{$queried->id}}">{{$queried->title}}</a></b></h4>
+        <h4><b>Location:</b>   {{$queried->location}}</h4>
+        <h5><b>Classification:   </b>{{$queried->classification}}</h5>
+        <h5><b>Work Type:   </b>{{$queried->workType}}</h5>
+        <h5><b>Created At:   </b>{{$queried->created_at}}</h5>
         @endforeach
 
       @elseif(isset($error))
@@ -204,8 +152,4 @@
 </div>
 
 @endmobile
-
-
-
-
 @endsection

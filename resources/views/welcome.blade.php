@@ -15,31 +15,24 @@
     @if(isset($jobs))
 
     <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Location</th>
-                <th>Classification</th>
-                <th>Work Type</th>
-                <th>Posted</th>
-            </tr>
-        </thead>
+
         <tbody>
             @if(count($jobs) == 0)
+
                 <h4 style="position:absolute; top:350px; left:550px">Sorry! There are no recommended jobs pertaining to your preferences at the moment...</h4>
                 <h4 style="position:absolute; top:370px; left:560px">Check back later to discover potential new jobs in regards to your preferences!</h4>
 
             @elseif(count($jobs) >= 1)
 
             @foreach($jobs as $job)
-            <tr>
-                <td><a href="search/{{$job->id}}">{{$job->title}}</td></a>
-                <td>{{$job->location}}</td>
-                <td>{{$job->classification}}</td>
-                <td>{{$job->workType}}</td>
-                <td>{{$job->created_at}}</td>
-            </tr>
+            <hr>
+            <h4><b><a href="search/{{$job->id}}">{{$job->title}}</a></b></h4>
+            <h4><b>Location:</b>   {{$job->location}}</h4>
+            <h5><b>Classification:   </b>{{$job->classification}}</h5>
+            <h5><b>Work Type:   </b>{{$job->workType}}</h5>
+            <h5><b>Created At:   </b>{{$job->created_at}}</h5>
             @endforeach
+
         </tbody>
 
           @endif
@@ -55,7 +48,7 @@
 
 <div class="container">
 
-    <center><h3>Recommendations!</h3><center></br>
+    <center><h4><b>Recommendations!</b></h4><center>
     <p>Here are some recommendations that</br>derive from your preferences...</p>
     @if(isset($jobs))
 
@@ -81,14 +74,24 @@
                 <td>{{$job->created_at}}</td>
             </tr>
             @endforeach
+
+            @foreach($details as $queried)
+            <hr>
+            <h4><b><a href="search/{{$queried->id}}">{{$queried->title}}</a></b></h4>
+            <h4><b>Location:</b>   {{$queried->location}}</h4>
+            <h5><b>Classification:   </b>{{$queried->classification}}</h5>
+            <h5><b>Work Type:   </b>{{$queried->workType}}</h5>
+            <h5><b>Created At:   </b>{{$queried->created_at}}</h5>
+            @endforeach
+
         </tbody>
     </table>
 
 </div>
 
         @elseif(count($jobs) == 0)
-            <h4 style="position:absolute; top:350px">Sorry! There are no recommended jobs pertaining to your preferences at the moment...</h4>
-            <h4 style="position:absolute; top:410px">Check back later to discover potential new jobs in regards to your preferences!</h4>
+            <p style="position:relative; top:350px">Sorry! There are no recommended jobs pertaining to your preferences at the moment...</p>
+            <p style="position:relative; top:410px">Check back later to discover potential new jobs in regards to your preferences!</p>
 
         @endif
 
