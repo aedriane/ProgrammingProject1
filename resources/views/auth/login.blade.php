@@ -10,7 +10,7 @@
 <div class="container2"> <!--changed from container2 to container-->
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h2><center><strong>Job Seekerw Login</strong></center></h2>
+            <h2><center><strong>Job Seekerwe Login</strong></center></h2>
             <div class="panel panel-default">
                 <!--<div class="panel-heading">Login</div>-->
 

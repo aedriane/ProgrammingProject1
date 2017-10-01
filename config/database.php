@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'awsdb.cakgz3f2n9nc.ap-southeast-2.rds.amazonaws.com'),
+            'host' => env('DB_HOST', 'jobhorizondb.cakgz3f2n9nc.ap-southeast-2.rds.amazonaws.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'jobhorizon'),
-            'username' => env('DB_USERNAME', 'awsuser'),
-            'password' => env('DB_PASSWORD', 'awspassword'),
+            'database' => env('DB_DATABASE', 'jobhorizondb'),
+            'username' => env('DB_USERNAME', 'jobhorizonuser'),
+            'password' => env('DB_PASSWORD', 'jobhorizonpassword'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
