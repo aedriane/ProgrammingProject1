@@ -34,11 +34,11 @@ class GuestController extends Controller
       $classifications=DB::table('jobs')->distinct()->select('classification')->get();
       $workTypes=DB::table('jobs')->distinct()->select('workType')->get();
 
-      return view('auth/register', compact('locations', 'classifications', 'workTypes'));
+      return view('auth.register', compact('locations', 'classifications', 'workTypes'));
     }
 
     public function login()
     {
-      return view('auth/login');
+      return view('auth.login');
     }
 }
