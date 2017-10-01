@@ -5,20 +5,21 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{$user->username}}</div>
-                    <div class="panel-body">
+                  <table class="table table-striped">
 
-                        {{$user->firstname}}
-                        {{$user->lastname}}
-                        {{$user->email}}
-                        {{$user->password}}
-                        {{$user->location}}
-                        {{$user->classification}}
-                        {{$user->workType}}
-                    </div>
+                      <tbody>
 
-        </div>
-    </div>
+                          <h1>Username: <b>{{$users->username}}</b></h1><br>
+                          <h4>First Name: <b>{{$users->firstname}}</b></h4><br>
+                          <h4>Last Name: <b>{{$users->lastname}}</b></h4><br>
+                          <h4>Location: <b>{{$users->location}}</b></h4><br>
+                          <h4>Classification: <b>{{$users->classification}}</b></h4><br>
+                          <h4>Work Type: <b>{{$users->workType}}</b></h4><br>
+                          <h4>Created: <b>{{$users->created_at}}</b></h4><br>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
         </div>
     </div>
 

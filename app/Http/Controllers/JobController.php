@@ -6,7 +6,11 @@ use App\Jobs;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
+use Input;
+use Auth;
+use Carbon;
 use Session;
+use Illuminate\Database\Query\Builder;
 
 use App\Http\Requests\JobRequest;
 
@@ -24,7 +28,9 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Jobs::all();
+        $jobs = Jobs::orderBy('created_at', 'asc')
+        ->Paginate(5);
+
         return view('jobs.index', compact('jobs'));
     }
 

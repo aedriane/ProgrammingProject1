@@ -84,7 +84,7 @@
       }
 
       html{
-        background:url(/img/JobHBG1.png);
+        background:url(/img/JobHBG1.png) no-repeat;
         background-attachment: fixed;
         background-size: 100%;
       }
@@ -149,9 +149,9 @@
                 </div>
             </div>
             <center class="spf">
-              <a href="{{ route('search') }}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Search</p></a>
-              <a href="{{ route('profile') }}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Profile</p></a>
-              <a href="{{ route('faq') }}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
+              <a href="{{ route('search') }}"class="pages"><img src={{asset('img/search3.png')}} style="width:72px;height:60px;margin-top:12px;"></a>
+              <a href="{{ route('profile') }}"class="pages"><img src={{asset('img/profile3.png')}} style="width:72px;height:60px;margin-top:12px;"></a>
+              <a href="{{ route('faq') }}"class="pages"><img src={{asset('img/faq3.png')}} style="width:60px;height:60px;margin-top:12px;"></a>
             </center>
         </nav>
 
@@ -223,7 +223,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default" style="padding-bottom:35px">
+        <nav class="navbar navbar-default" style="padding-bottom:8px">
             <div class="container">
                 <div class="navbar-header"style="padding-bottom:18px">
 
@@ -241,7 +241,7 @@
 
                 </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse" style="padding-bottom:5px; text-align:center">
+                <div class="collapse navbar-collapse" id="app-navbar-collapse" style="padding-bottom:40px;  text-align:center">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
@@ -251,8 +251,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a  href="{{ route('login') }}">Login</a></li>
-                            <li><a  href="{{ route('register') }}">Register</a></li>
+                        <li><a href="{{ route('admin_login') }}">Administrator Login</a></li>
+                        <li><a href="{{ route('login') }}">Job Seeker Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a class="auth" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -278,11 +279,9 @@
                     </ul>
                 </div>
             </div>
-            <center class="spf">
-              <a href="{{ route('search') }}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Search</p></a>
-              <a href="{{ route('profile') }}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Profile</p></a>
-              <a href="{{ route('faq') }}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
-            </center>
+              <center><a href="{{ route('search') }}"><img src={{asset('img/search3.png')}} style="position:relative; right:75px; width:50px; height:40px;"></a>
+                <a href="{{ route('profile') }}"><img src={{asset('img/profile3.png')}} style="position:relative; right:10px; width:50px; height:40px;"></a>
+                <a href="{{ route('faq') }}"><img src={{asset('img/faq3.png')}} style="position:relative; left:65px; width:40px; height:40px;"></a></center>
         </nav>
 
 

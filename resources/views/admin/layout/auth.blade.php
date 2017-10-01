@@ -137,13 +137,13 @@
             </div>
             <center class="spf">
               @if(Auth::guest())
-              <a href="{{route('admin_login')}}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Jobs</p></a>
-              <a href="{{route('admin_login')}}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Users</p></a>
-              <a href="{{route('faq')}}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
+              <a href="{{route('admin_login')}}"class="pages"><img src={{asset('img/jobs3.png')}} style="width:72px;height:60px;margin-top:12px;"></a>
+              <a href="{{route('admin_login')}}"class="pages"><img src={{asset('img/users3.png')}} style="width:72px;height:60px;margin-top:12px;"></a>
+              <a href="{{route('faq')}}"class="pages"><img src={{asset('img/faq3.png')}} style="width:60px;height:60px;margin-top:12px;"></a>
               @else
-              <a href="{{route('jobs.index')}}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Jobs</p></a>
-              <a href="{{route('users.index')}}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Users</p></a>
-              <a href="{{route('adminfaq')}}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
+              <a href="{{route('jobs.index')}}"class="pages"><img src={{asset('img/jobs3.png')}} style="width:72px;height:60px;margin-top:12px;"></a>
+              <a href="{{route('users.index')}}"class="pages"><img src={{asset('img/users3.png')}} style="width:72px;height:60px;margin-top:12px;"></a>
+              <a href="{{route('adminfaq')}}"class="pages"><img src={{asset('img/faq3.png')}} style="width:60px;height:60px;margin-top:12px;"></a>
             </center>
               @endif
         </nav>
@@ -214,7 +214,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default" style="padding-bottom:35px">
+        <nav class="navbar navbar-default" style="padding-bottom:8px">
             <div class="container">
                 <div class="navbar-header"style="padding-bottom:18px">
 
@@ -227,12 +227,16 @@
                     </button>
 
                     <!-- Branding Image -->
+                    @if(Auth::guest())
                     <a href="{{URL::to('/')}}"><img class="logo" src={{asset('img/JobHLogo.png')}} alt="Logo"></a>
+                    @else
+                    <a href="{{URL::to('admin/home')}}"><img class="logo" src={{asset('img/JobHLogo.png')}} alt="Logo"></a>
+                    @endif
 
 
                 </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse" style="padding-bottom:5px; text-align:center">
+                <div class="collapse navbar-collapse" id="app-navbar-collapse" style="padding-bottom:40px;  text-align:center">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
@@ -242,18 +246,17 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                        <li><a style="color:#fff" class="loginregister" href="{{ route('admin_login') }}">Administrator Login</a></li>
-                        <li><a style="color:#fff" class="loginregister" href="{{ route('login') }}">Job Seeker Login</a></li>
-
+                        <li><a href="{{ route('admin_login') }}">Administrator Login</a></li>
+                        <li><a href="{{ route('login') }}">Job Seeker Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a class="auth" href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a class="auth" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->email }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu auth" role="menu">
                                     <li>
-                                      <a class="new"href="{{ route('profile') }}">Profile</a>
                                         <a class="new"href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -270,15 +273,19 @@
                     </ul>
                 </div>
             </div>
-            <center class="spf">
-              <a href="{{ route('search') }}"class="pages"><img src={{asset('img/search.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Search</p></a>
-              <a href="{{ route('profile') }}"class="pages"><img src={{asset('img/user.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">Profile</p></a>
-              <a href="{{ route('faq') }}"class="pages"><img src={{asset('img/faq.png')}} style="width:20px;height:20px;margin-top:12px;"><br/><p class="chosepg">FAQs</p></a>
-            </center>
+                <center class="spf">
+                  @if(Auth::guest())
+                  <a href="{{ route('admin_login') }}"><img src={{asset('img/jobs3.png')}} style="position:relative; right:75px; width:50px; height:40px;"></a>
+                    <a href="{{ route('admin_login') }}"><img src={{asset('img/users3.png')}} style="position:relative; right:10px; width:50px; height:40px;"></a>
+                    <a href="{{ route('adminfaq') }}"><img src={{asset('img/faq3.png')}} style="position:relative; left:65px; width:40px; height:40px;"></a>
+                  @else
+                  <a href="{{ route('jobs.index') }}"><img src={{asset('img/jobs3.png')}} style="position:relative; right:75px; width:50px; height:40px;"></a>
+                    <a href="{{ route('users.index') }}"><img src={{asset('img/users3.png')}} style="position:relative; right:10px; width:50px; height:40px;"></a>
+                    <a href="{{ route('adminfaq') }}"><img src={{asset('img/faq3.png')}} style="position:relative; left:65px; width:40px; height:40px;"></a>
+
+                </center>
+                  @endif
         </nav>
-
-
-
         @yield('content')
     </div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Users;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 use App\Http\Requests\UserRequest;
 
@@ -22,8 +23,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = Users::all();
-        return view('users.index', compact('user'));
+        $users = Users::orderBy('created_at', 'asc')
+        ->paginate(5);
+
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -33,7 +36,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');//
+        $locations=DB::table('jobs')->distinct()->select('location')->get();
+        $classifications=DB::table('jobs')->distinct()->select('classification')->get();
+        $workTypes=DB::table('jobs')->distinct()->select('workType')->get();
+
+        return view('users.create', compact('locations', 'classifications', 'workTypes'));
     }
 
     /**
@@ -55,11 +62,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Users $user)
-    {
-            dd($user);
-        return view('users.show', compact('user'));
-    }
+     public function show($id)
+     {
+        $users = Users::findOrFail($id);
+         return view('users.show', compact('users'));
+     }
     /**
      * Show the form for editing the specified resource.
      *
@@ -68,7 +75,11 @@ class UserController extends Controller
      */
     public function edit(Users $user)
     {
-        return view('users.edit',compact('user'));
+      $locations=DB::table('jobs')->distinct()->select('location')->get();
+      $classifications=DB::table('jobs')->distinct()->select('classification')->get();
+      $workTypes=DB::table('jobs')->distinct()->select('workType')->get();
+
+        return view('users.edit',compact('user', 'locations', 'classifications', 'workTypes'));
     }
 
     /**

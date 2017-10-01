@@ -35,19 +35,43 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('location','Enter Location') !!}
-                            {!! Form::text('location',null,['class'=>'form-control'])!!}
-                        </div>
+                         <label for="location" class="col-md-3 control-label">Location</label>
 
-                        <div class="form-group">
-                            {!! Form::label('classification','Enter Classification') !!}
-                            {!! Form::text('classification',null,['class'=>'form-control'])!!}
-                        </div>
+                         <div class="col-md-3">
+                           <select id="location" name="location" class="form-control" placeholder="Select Location">
+                                  <option value='NULL'>Select Location</option>
+                                   @foreach($locations as $loc)
+                                   <option value="{{$loc->location}}">{{$loc->location}}</option>
+                                   @endforeach
+                           </select>
+                         </div>
+                       </div>
 
-                        <div class="form-group">
-                            {!! Form::label('workType','Enter WorkType') !!}
-                            {!! Form::text('workType',null,['class'=>'form-control'])!!}
-                        </div>
+                       <div class="form-group">
+                         <label for="classification" class="col-md-3 control-label">Classification</label>
+
+                         <div class="col-md-3">
+                           <select id="classification" name="classification" class="form-control">
+                                  <option value='NULL'>Select Classification</option>
+                                   @foreach($classifications as $cla)
+                                   <option value="{{$cla->classification}}">{{$cla->classification}}</option>
+                                   @endforeach
+                           </select>
+                         </div>
+                     </div>
+
+                     <div class="form-group">
+                       <label for="workType" class="col-md-3 control-label">Work Type</label>
+
+                       <div class="col-md-3">
+                         <select id="workType" name="workType" class="form-control">
+                                <option value='NULL'>Select Work Type</option>
+                                 @foreach($workTypes as $wor)
+                                 <option value="{{$wor->workType}}">{{$wor->workType}}</option>
+                                 @endforeach
+                         </select>
+                       </div>
+                   </div>
 
                         <div class="form-group">
                             {!! Form::button('Update',['type'=>'submit','class'=>'btn btn-primary']) !!}
