@@ -45,7 +45,7 @@ return [
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'jobhorizondb'),
             'username' => env('DB_USERNAME', 'jobhorizonuser'),
-            'password' => env('DB_PASSWORD', 'jobhorizonpassword'),
+            'password' => env('DB_PASSWORD', 'jobhorizon'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
