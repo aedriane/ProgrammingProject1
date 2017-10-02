@@ -25,12 +25,12 @@
             @elseif(count($jobs) >= 1)
 
             @foreach($jobs as $job)
-            <hr>
+            <center><hr>
             <h4><b><a href="search/{{$job->id}}">{{$job->title}}</a></b></h4>
             <h4><b>Location:</b>   {{$job->location}}</h4>
             <h5><b>Classification:   </b>{{$job->classification}}</h5>
             <h5><b>Work Type:   </b>{{$job->workType}}</h5>
-            <h5><b>Created At:   </b>{{$job->created_at}}</h5>
+            <h5><b>Created At:   </b>{{$job->created_at}}</h5></center>
             @endforeach
 
         </tbody>

@@ -80,8 +80,7 @@
         <div class="col-md-8 col-md-offset-2">
             @include('profile::_menu')
         </div>
-            <div class="row">
-        <div class="col-md-8 col-md-offset-2" style="width:320px; left:15px;">
+      <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">Preferences</div>
                         <div class="panel-body">
@@ -89,7 +88,7 @@
                                 {{ csrf_field() }}
 
                                 <div class="form-group">
-                                 <label for="location" class="col-md-3 control-label">Location</label>
+                                 <label for="location" class="control-label col-md-3">Location</label>
 
                                  <div class="col-md-3">
                                    <select id="location" name="location" class="form-control" placeholder="Select Location">
@@ -102,9 +101,9 @@
                                </div>
 
                                <div class="form-group">
-                                 <label for="classification" class="col-md-3 control-label">Classification</label>
+                                 <label for="classification" class="control-label col-md-3">Classification</label>
 
-                                 <div class="col-md-3">
+                                 <div class="col-md-6">
                                    <select id="classification" name="classification" class="form-control">
                                           <option value='NULL'>Select Classification</option>
                                            @foreach($classifications as $cla)
@@ -115,7 +114,7 @@
                              </div>
 
                              <div class="form-group">
-                               <label for="workType" class="col-md-3 control-label">Work Type</label>
+                               <label for="workType" class="control-label col-md-3">Work Type</label>
 
                                <div class="col-md-3">
                                  <select id="workType" name="workType" class="form-control">
@@ -139,7 +138,6 @@
             </div>
 
         </div>
-    </div>
 
 
 

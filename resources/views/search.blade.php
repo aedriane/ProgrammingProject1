@@ -103,15 +103,16 @@
     </div>
 
     <form class="form-horizontal" method="POST" action="{{ route('searchresults') }}">
-        {{ csrf_field() }}
+      {{ csrf_field() }}
+
 
         <div class="form-group">
 
-            <input type="text" class="input2" name="search" placeholder="Enter Keyword" style="position:relative; width:300px">
+            <input type="text" class="input2" name="search" placeholder="Enter Keyword" style="position:relative; margin-left:auto;margin-right:auto;text-align:center; justify-content: center;width:100%">
         </div>
 
         <div class="form-group">
-           <select id="location" name="location" class="form-control input1" placeholder="Select Location" style="position:relative; left:60px; bottom:25px; width: 200px">
+           <select id="location" name="location" class="form-control input1" placeholder="Select Location" style="  position: relative;top: 50%;left: 50%;margin-top: -50px;margin-left: -100px; width:53%; top:20px;">
                   <option value=''>Select Location</option>
                   @if(isset($locations))
                    @foreach($locations as $loc)
@@ -119,8 +120,10 @@
                    @endforeach
                   @endif
            </select>
+         </div>
 
-           <select id="classification" name="classification" class="form-control input1" placeholder="Select Classification" style="position:relative; bottom:15px; left:60px; width: 200px">
+        <div class="form-group">
+           <select id="classification" name="classification" class="form-control input1" placeholder="Select Classification" style="  position: relative;top: 50%;left: 50%;margin-top: -50px;margin-left: -100px; width:53%; top:40px;">
                   <option value=''>Select Classification</option>
                   @if(isset($classifications))
                    @foreach($classifications as $cla)
@@ -128,8 +131,10 @@
                    @endforeach
                   @endif
            </select>
+         </div>
 
-           <select id="workType" name="workType" class="form-control input1" placeholder="Select Work Type" style="position:relative; bottom:5px; left:60px; width: 200px">
+          <div class="form-group">
+           <select id="workType" name="workType" class="form-control input1" placeholder="Select Work Type" style="  position: relative;top: 50%;left: 50%;margin-top: -50px;margin-left: -100px; width:53%; top:60px;">
                   <option value=''>Select Work Type</option>
                   @if(isset($workTypes))
                    @foreach($workTypes as $wTy)
@@ -139,8 +144,9 @@
            </select>
         </div>
 
+
         <div class="form-group">
-        <button type="submit" class="btn btn-primary button2" style="position:relative; bottom:2px; left:105px">
+        <button type="submit" class="btn btn-primary button2" style="  position: relative;top: 50%;left: 50%;margin-top: -50px;margin-left: -100px; width:53%; top:100px;">
             Search
         </button>
       </div>
@@ -149,7 +155,7 @@
 
    </form>
 
-    <div class="searchresault">
+    <div class="searchresault" style="position:relative; top:100px;">
         @if(isset($details))
 
             @if(count($details) == 1)
@@ -159,14 +165,14 @@
             @endif
 
         @foreach($details as $queried)
+        <center>
         <hr>
         <h3><b><a href="search/{{$queried->id}}">{{$queried->title}}</a></b></h3>
         <h4><b>Location:   </b>{{$queried->location}}</h4>
         <h5><b>Classification:   </b>{{$queried->classification}}</h5>
-        <ul style="position:relative; text-align:left; list-style-position:outside">
-          <h5><b>Work Type:   </b>{{$queried->workType}}</h5>
-          <h5><b>Created At:   </b>{{$queried->created_at}}</h5>
-        </ul>
+        <h5><b>Work Type:   </b>{{$queried->workType}}</h5>
+        <h5><b>Created At:   </b>{{$queried->created_at}}</h5>
+      </center>
         @endforeach
 
       {{$details->render()}}

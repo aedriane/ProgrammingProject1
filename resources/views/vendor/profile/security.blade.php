@@ -69,7 +69,7 @@
       <div class="col-md-8 col-md-offset-2">
           @include('profile::_menu')
       </div>
-              <div class="col-md-8 col-md-offset-2" style="width:320px;">
+        <div class="col-md-8 col-md-offset-2">
             @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
