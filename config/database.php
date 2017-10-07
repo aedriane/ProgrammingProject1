@@ -41,7 +41,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'jobhorizondb.cakgz3f2n9nc.ap-southeast-2.rds.amazonaws.com'),
+            'host' => env('DB_HOST', 'jobhorizondb.cszmb7x0x9ym.us-west-2.rds.amazonaws.com'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'jobhorizondb'),
             'username' => env('DB_USERNAME', 'jobhorizonuser'),
