@@ -38,7 +38,7 @@
                             </tr>
                         @endforeach
                      </table>
-                    !! $users->render() !!}
+                    {!! $users->render() !!}
                     </div>
                 </div>
                 {{link_to_route('users.create','Add User',null,['class'=>'btn btn-success'])}}
