@@ -38,7 +38,9 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            {!! $jobs->render() !!}
                         </table>
+
                     </div>
                 </div>
                 {{link_to_route('jobs.create','Add Job',null,['class'=>'btn btn-success'])}}
