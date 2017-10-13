@@ -3,7 +3,7 @@
 <div class="container2">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h2><center><strong>Job Seeker zLogin</strong></center></h2>
+			<h2><center><strong>Job Seeker Login</strong></center></h2>
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<form class="form-horizontal" method="POST" action="{{ route('login') }}">{{ csrf_field() }}
