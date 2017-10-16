@@ -61,7 +61,7 @@
                                     </button>
 
                                     <br/>
-                                    <a class="btn btn-link fyp" href="{{ route('password.reset') }}">
+                                    <a class="btn btn-link fyp" href="{{ route('admin.password.reset') }}">
                                         Forgot Your Password?
                                     </a>
                                 </div>

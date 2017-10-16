@@ -34,6 +34,11 @@ Route::group( ['middleware' => 'auth' ], function(){
 
     Route::get('apply', 'ApplyController@apply')->name('apply');
     Route::get('applyconfirmation', 'ApplyController@apply')->name('applyconfirmation');
+
+    Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+    Route::post('/password/reset', 'Auth\ResetPasswordController@reset')->name('password.email');
+    Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+    Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 });
 
 Route::group(['prefix' => 'admin'], function () {
@@ -47,9 +52,9 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('admin_register');
   Route::post('/register', 'AdminAuth\RegisterController@register');
 
-  Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
-  Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
-  Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+  Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.request');
+  Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('admin.password.email');
+  Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('admin.password.reset');
   Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
 
   /*
