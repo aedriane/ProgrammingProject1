@@ -34,7 +34,7 @@
 						<div class="form-group">
 							<div class="butnlink">
 								<button type="submit" class="btn btn-primary button1">Login</button>
-								<br> <a class="btn btn-link fyp" href="{{ route('password.request') }}">Forgot Your Password?</a>
+								<br> <a class="btn btn-link fyp" href="{{ route('password.reset') }}">Forgot Your Password?</a>
 							</div>
 						</div>
 					</form>
