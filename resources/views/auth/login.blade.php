@@ -1,5 +1,7 @@
 @extends('layouts.app') @section('content') @desktop
+<head>
 <link href="{{ asset('css/css.css') }}" rel="stylesheet">
+</head>
 <div class="container2">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
