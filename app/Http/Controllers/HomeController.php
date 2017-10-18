@@ -94,6 +94,13 @@ class HomeController extends Controller
             $query->where('jobs.workType', '=', $workTypes);
           }
 
+          else if($locations == 'NULL' && $classifications == 'NULL' && $workTypes == 'NULL')
+          {
+            $query->where('jobs.location', '=', $locations);
+            $query->where('jobs.classification', '=', $classifications);
+            $query->where('jobs.workType', '=', $workTypes);            
+          }
+
         })
         ->orderByRaw("RAND()")
         ->take(3)
